@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'frontend-daily-learning';
+  toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+  }
 }

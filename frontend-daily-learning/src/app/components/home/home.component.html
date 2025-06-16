@@ -1,0 +1,6 @@
+<!-- home.component.html -->
+<div class="grid grid-cols-4 gap-4 mt-4">
+    <a *ngFor="let day of days" [routerLink]="['/day', day]" class="p-4 border rounded hover:bg-gray-100">
+        Day {{ day }}
+    </a>
+</div>

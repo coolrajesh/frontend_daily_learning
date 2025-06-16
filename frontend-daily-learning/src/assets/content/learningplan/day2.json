@@ -1,0 +1,25 @@
+{
+    "sections": [
+      {
+        "title": "JavaScript",
+        "topic": "Data Types and Type Coercion",
+        "solution": "### JavaScript Data Types\n\n- **Primitive**: `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`\n- **Non-Primitive**: `object`, `array`, `function`\n\n#### Type Coercion\n```js\n'5' + 1 // '51' (string)\n'5' - 1 // 4 (number)\ntrue + 1 // 2\nfalse + 'a' // 'falsea'\n```\n\n#### Equality Comparison\n```js\n1 == '1'    // true (coercion)\n1 === '1'   // false (strict)\n```\n\nUse `===` to avoid unexpected results."
+      },
+      {
+        "title": "Angular",
+        "topic": "Modules vs Standalone Components",
+        "solution": "### Standalone Components (Angular 14+)\n\n#### Traditional Approach\n```ts\n@NgModule({\n  declarations: [...],\n  imports: [...]\n})\n```\n\n#### Standalone Approach\n```ts\n@Component({\n  standalone: true,\n  imports: [CommonModule],\n  ...\n})\n```\n\n#### Pros\n- Lightweight, no boilerplate module\n- Easier to reuse\n- Improves tree-shaking\n\n#### When to Use?\n- Small components\n- Micro frontends\n- Lazy-loaded pages"
+      },
+      {
+        "title": "TypeScript",
+        "topic": "Interfaces vs Types",
+        "solution": "### Interfaces vs Types\n\n#### Similarity\n```ts\ninterface A {\n  name: string;\n}\ntype B = {\n  name: string;\n}\n```\n\n#### Differences\n| Feature        | Interface | Type |\n|----------------|-----------|------|\n| Extends other  | ✅        | ✅   |\n| Mergeable      | ✅        | ❌   |\n| Use with union | ❌        | ✅   |\n\n#### Best Practice\nUse `interface` for data shape, `type` for unions & utility types."
+      },
+      {
+        "title": "Frontend Architecture",
+        "topic": "Monolithic vs Modular Frontend",
+        "solution": "### Monolithic vs Modular Frontend\n\n#### Monolithic\n- All features in one big app\n- Harder to scale or manage\n\n#### Modular\n- Feature-based modules\n- Lazy loading\n- Reusable, testable units\n\n#### Example Folder Structure\n```\napp/\n├── dashboard/\n├── auth/\n├── shared/\n```"
+      }
+    ]
+  }
+  
