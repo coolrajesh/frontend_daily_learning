@@ -22,26 +22,18 @@ export class TabViewComponent {
 
   constructor(private http: HttpClient, private parser: MarkdownSectionParserService) { }
 
-  ngOnInit(): void {    
-    // const url = `assets/content/learningplan/day${this.dayId}.json`;
-    // this.http.get<any>(url).subscribe(data => {
-    //   this.tabs = data.sections;
-    //   if (this.tabs.length > 0) {
-    //     this.active = this.tabs[0].title;
-    //   }
-    // });
+  ngOnInit(): void {
     this.loadDayContent();
   }   
  
   loadDayContent() {
     this.loading = true;
     this.errorMessage = '';
-    this.http.get<any>(`assets/content/learningplan/day${this.dayId}.json`).subscribe({
+    // this.http.get<any>(`assets/content/day${this.dayId}.json`).subscribe({
+    this.http.get<any>(`assets/content/data.json`).subscribe({
       next: (data) => {
-        this.tabs = data.sections.map((tab: any) => ({
-          ...tab,
-          show: true
-        }));
+        const dayData = data.find((item:any) => item.day == this.dayId);
+        this.tabs = dayData.sections;
         this.active = this.tabs[0]?.title || '';
         this.loading = false;
       },
