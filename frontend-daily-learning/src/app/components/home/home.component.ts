@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { MarkdownModule } from 'ngx-markdown';
 import { CommonModule } from '@angular/common';   
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MarkdownModule, CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
