@@ -1,292 +1,163 @@
 [
-    {
-        "day": 1,
-          "sections": [
-            {
-              "title": "JavaScript",
-              "topic": "Variable Declarations (var, let, const)",
-              "solution": "### Variable Declarations in JavaScript\n\nJavaScript offers three keywords to declare variables: `var`, `let`, and `const`.\n\n#### 1. `var`\n- **Function-scoped**\n- Can be redeclared\n- Hoisted with `undefined`\n\n```js\nconsole.log(x); // undefined\nvar x = 10;\n```\n\n#### 2. `let`\n- **Block-scoped**\n- Cannot be redeclared in the same scope\n- Hoisted but in Temporal Dead Zone\n\n```js\nlet x = 5;\nif (true) {\n  let x = 10;\n  console.log(x); // 10\n}\nconsole.log(x); // 5\n```\n\n#### 3. `const`\n- **Block-scoped**\n- Must be initialized during declaration\n- Cannot be reassigned (but mutable if object/array)\n\n```js\nconst user = { name: 'Raj' };\nuser.name = 'Roy';\n```\n\n#### Summary Table\n| Feature      | var     | let     | const   |\n|--------------|---------|---------|---------|\n| Scope        | Function| Block   | Block   |\n| Hoisted      | Yes     | Yes     | Yes     |\n| Reassignable | Yes     | Yes     | No      |\n| Redeclarable | Yes     | No      | No      |"
-            },
-            {
-              "title": "Angular",
-              "topic": "Angular Project Structure Overview",
-              "solution": "### Angular Project Structure\n\nWhen you scaffold an Angular app, here’s what you get:\n\n```\nsrc/\n├── app/\n│   ├── components/\n│   ├── services/\n│   ├── app.component.ts\n│   └── app.module.ts\n├── assets/\n├── environments/\n├── index.html\n├── main.ts\n```\n\n#### Key Concepts\n- **Components**: UI building blocks\n- **Services**: Business logic, reusable code\n- **Modules**: Organize features, enable lazy loading\n\n#### Best Practices\n- Use **standalone components** for isolation\n- Group files by **feature module** not type\n- Follow naming conventions like `*.component.ts`, `*.service.ts`"
-            },
-            {
-              "title": "TypeScript",
-              "topic": "Intro to TypeScript",
-              "solution": "### What is TypeScript?\n\nTypeScript is a statically typed superset of JavaScript.\n\n#### Benefits:\n- Compile-time type checking\n- Better tooling (IntelliSense)\n- Interfaces, generics, enums\n\n```ts\nfunction greet(name: string): string {\n  return `Hello, ${name}`;\n}\n```\n\n#### Example Use Case\n```ts\ninterface User {\n  id: number;\n  name: string;\n}\n\nconst user: User = {\n  id: 1,\n  name: 'Rajesh'\n};\n```"
-            },
-            {
-              "title": "Frontend Architecture",
-              "topic": "What is Frontend Architecture? Goals and Responsibilities",
-              "solution": "### Frontend Architecture\n\nA well-designed architecture ensures scalability, performance, and maintainability.\n\n#### Goals\n- Separate concerns (UI, logic, state)\n- Improve testing and reusability\n- Enable collaboration and onboarding\n\n#### Responsibilities\n- **Component Design** (e.g., smart vs dumb components)\n- **State Management** (RxJS, NgRx, services)\n- **Routing & Lazy Loading**\n- **Code Splitting**\n- **Testing & CI/CD Setup**"
-            }
-          ]
-    },         
-    {
-        "day": 2,
-        "sections": [
+  {
+    "day": 1,
+    "sections": [
+      {
+        "title": "HTML",
+        "topic": "HTML Boilerplate & Semantic Tags",
+        "summary": "Understand the basic HTML5 structure and semantic elements.",
+        "solution": "### 🚀 HTML5 Boilerplate\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Day 1 Learning</title>\n</head>\n<body>\n  <header><h1>Welcome</h1></header>\n  <main><p>Main content</p></main>\n  <footer>&copy; 2025</footer>\n</body>\n</html>\n```\n\n### 🧩 Semantic Elements\n- `<header>`, `<footer>`, `<main>`, `<section>`, `<article>` – improve accessibility and SEO.",
+        "image": "assets/images/day1/html-semantics.png",
+        "interviewQuestions": [
           {
-            "title": "JavaScript",
-            "topic": "Data Types and Type Coercion",
-            "solution": "### JavaScript Data Types\n\n- **Primitive**: `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`\n- **Non-Primitive**: `object`, `array`, `function`\n\n#### Type Coercion\n```js\n'5' + 1 // '51' (string)\n'5' - 1 // 4 (number)\ntrue + 1 // 2\nfalse + 'a' // 'falsea'\n```\n\n#### Equality Comparison\n```js\n1 == '1'    // true (coercion)\n1 === '1'   // false (strict)\n```\n\nUse `===` to avoid unexpected results."
+            "question": "What are semantic tags in HTML?",
+            "answer": "Semantic tags clearly describe their meaning in a human- and machine-readable way.",
+            "showAnswer": false
           },
           {
-            "title": "Angular",
-            "topic": "Modules vs Standalone Components",
-            "solution": "### Standalone Components (Angular 14+)\n\n#### Traditional Approach\n```ts\n@NgModule({\n  declarations: [...],\n  imports: [...]\n})\n```\n\n#### Standalone Approach\n```ts\n@Component({\n  standalone: true,\n  imports: [CommonModule],\n  ...\n})\n```\n\n#### Pros\n- Lightweight, no boilerplate module\n- Easier to reuse\n- Improves tree-shaking\n\n#### When to Use?\n- Small components\n- Micro frontends\n- Lazy-loaded pages"
-          },
-          {
-            "title": "TypeScript",
-            "topic": "Interfaces vs Types",
-            "solution": "### Interfaces vs Types\n\n#### Similarity\n```ts\ninterface A {\n  name: string;\n}\ntype B = {\n  name: string;\n}\n```\n\n#### Differences\n| Feature        | Interface | Type |\n|----------------|-----------|------|\n| Extends other  | ✅        | ✅   |\n| Mergeable      | ✅        | ❌   |\n| Use with union | ❌        | ✅   |\n\n#### Best Practice\nUse `interface` for data shape, `type` for unions & utility types."
-          },
-          {
-            "title": "Frontend Architecture",
-            "topic": "Monolithic vs Modular Frontend",
-            "solution": "### Monolithic vs Modular Frontend\n\n#### Monolithic\n- All features in one big app\n- Harder to scale or manage\n\n#### Modular\n- Feature-based modules\n- Lazy loading\n- Reusable, testable units\n\n#### Example Folder Structure\n```\napp/\n├── dashboard/\n├── auth/\n├── shared/\n```"
+            "question": "Why is semantic HTML important for accessibility?",
+            "answer": "It helps screen readers and improves SEO.",
+            "showAnswer": false
           }
-        ]
-    },
-    {
-        "day": 3,
-        "sections": [
+        ],
+        "challenge": "Build a simple portfolio HTML using semantic elements.",
+        "quiz": [
           {
-            "title": "JavaScript",
-            "topic": "Scopes and Closures",
-            "solution": "### 🔍 Scopes in JavaScript\nJavaScript has function-level and block-level scopes.\n\n```js\nfunction outer() {\n  let a = 10;\n  function inner() {\n    console.log(a); // Closure: inner 'remembers' a\n  }\n  return inner;\n}\n\nconst closureFn = outer();\nclosureFn(); // 10\n```\n\n### ✅ Closure\nA closure is created when a function retains access to its parent’s scope, even after the parent function has returned."
-          },
-          {
-            "title": "Angular",
-            "topic": "Dependency Injection in Angular",
-            "solution": "### 💉 What is Dependency Injection (DI)?\nAngular's DI system provides components with the dependencies (services, config, etc.) they need.\n\n```ts\n@Injectable({ providedIn: 'root' })\nexport class UserService {\n  getUser() { return 'Rajesh'; }\n}\n\n@Component({...})\nexport class ProfileComponent {\n  constructor(private userService: UserService) {}\n}\n```\n\n- `@Injectable` marks classes for DI.\n- `providedIn: 'root'` means the service is a singleton across the app."
-          },
-          {
-            "title": "TypeScript",
-            "topic": "Interfaces and Types",
-            "solution": "### 🧩 Type vs Interface\nBoth are used for type-checking objects.\n\n```ts\ninterface User {\n  name: string;\n  age: number;\n}\n\ntype Admin = {\n  name: string;\n  accessLevel: string;\n};\n\nfunction printUser(user: User | Admin) {\n  console.log(user.name);\n}\n```\n\n- `interface` can be extended.\n- `type` can use unions, intersections.\n\n```ts\ninterface A { a: string; }\ninterface B extends A { b: number; }\n```"
-          },
-          {
-            "title": "Frontend Architecture",
-            "topic": "Component Communication Strategies",
-            "solution": "### 🔗 Component Communication in Frontend\nIn Angular:\n\n1. **@Input / @Output** – for parent-child\n```ts\n@Input() title: string;\n@Output() clicked = new EventEmitter<void>();\n```\n2. **Service with Subject/Observable** – for sibling or deep tree communication\n```ts\nconst subject = new Subject<string>();\nsubject.next('Hello');\n```\n3. **State Management Tools** – like NgRx, Signals (Angular 17+), or Akita\n\n### 🤝 Why it's important:\n- Encourages separation of concerns\n- Prevents tightly coupled components\n- Makes apps scalable"
-          }
-        ]
-    },
-    {
-      "day": 4,
-      "sections": [
-        {
-          "title": "JavaScript",
-          "topic": "Event Loop and Async Flow",
-          "solution": "### ⏳ Event Loop in Action\n```js\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));\nconsole.log('D');\n// Output: A, D, C, B\n```\nMicrotasks (Promises) execute before macrotasks (setTimeout)."
-        },
-        {
-          "title": "Angular",
-          "topic": "Standalone Components",
-          "solution": "### Angular Standalone Components\n```ts\n@Component({\n  standalone: true,\n  selector: 'my-card',\n  imports: [CommonModule],\n  template: '<div>Standalone!</div>'\n})\nexport class MyCard {}\n```\n- Useful for lazy loading and isolated features."
-        },
-        {
-          "title": "TypeScript",
-          "topic": "Enums and Literal Types",
-          "solution": "### Enums and Literal Types\n```ts\nenum Status { Success, Error }\ntype Mode = 'light' | 'dark';\nconst theme: Mode = 'dark';\n```\n- Enums define a named set; literals restrict values precisely."
-        },
-        {
-          "title": "HTML",
-          "topic": "Input Types & Validation",
-          "solution": "### HTML5 Input Types\n```html\n<input type=\"email\" required />\n<input type=\"number\" min=\"1\" max=\"10\" />\n```\nBuilt-in validation for UX-friendly forms."
-        },
-        {
-          "title": "CSS",
-          "topic": "Box Model Essentials",
-          "solution": "### Visual Box Model\n```css\n.box {\n  padding: 10px;\n  border: 2px solid #000;\n  margin: 20px;\n}\n```\nUnderstand how padding, border, margin affect layout."
-        },
-        {
-          "title": "Unit Testing",
-          "topic": "Jasmine Basics",
-          "solution": "### Test Syntax\n```ts\ndescribe('Math', () => {\n  it('adds numbers', () => {\n    expect(2 + 2).toBe(4);\n  });\n});\n```"
-        }
-      ]
-    },
-    {
-      "day": 5,
-      "sections": [
-        {
-          "title": "JavaScript",
-          "topic": "Array Methods Deep Dive",
-          "solution": "### Powerful Array APIs\n```js\n[1,2,3].map(n => n*2);\n[1,2,3].filter(n => n%2);\n[1,2,3].reduce((a,b) => a+b, 0);\n```"
-        },
-        {
-          "title": "Angular",
-          "topic": "Routing and Lazy Loading",
-          "solution": "### Angular Lazy Load Routes\n```ts\n{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }\n```"
-        },
-        {
-          "title": "TypeScript",
-          "topic": "Type Guards",
-          "solution": "### Type Inference with Guards\n```ts\nfunction isStr(x: any): x is string {\n  return typeof x === 'string';\n}\n```"
-        },
-        {
-          "title": "HTML",
-          "topic": "Forms and Accessibility",
-          "solution": "### Label Association\n```html\n<label for=\"email\">Email</label>\n<input id=\"email\" type=\"email\" />\n```"
-        },
-        {
-          "title": "CSS",
-          "topic": "Flexbox Basics",
-          "solution": "### Horizontal Layout\n```css\n.container {\n  display: flex;\n  justify-content: space-between;\n}\n```"
-        },
-        {
-          "title": "Unit Testing",
-          "topic": "Service Testing with TestBed",
-          "solution": "```ts\nconst service = TestBed.inject(MyService);\nexpect(service.getData()).toBe('something');\n```"
-        }
-      ]
-    },
-    {
-      "day": 6,
-      "sections": [
-        {
-          "title": "JavaScript",
-          "topic": "Destructuring + Spread/Rest",
-          "solution": "```js\nconst { name } = { name: 'Rajesh' };\nconst newArr = [...arr, 4];\n```"
-        },
-        {
-          "title": "Angular",
-          "topic": "Route Guards",
-          "solution": "```ts\ncanActivate(): boolean {\n return !!localStorage.getItem('token');\n}\n```"
-        },
-        {
-          "title": "TypeScript",
-          "topic": "Generics",
-          "solution": "```ts\nfunction identity<T>(arg: T): T { return arg; }\n```"
-        },
-        {
-          "title": "HTML",
-          "topic": "Semantic Tags",
-          "solution": "Use `<section>`, `<article>`, `<aside>`, etc. for meaningful structure."
-        },
-        {
-          "title": "CSS",
-          "topic": "CSS Grid",
-          "solution": "```css\ndisplay: grid;\ngrid-template-columns: repeat(3, 1fr);\n```"
-        },
-        {
-          "title": "Unit Testing",
-          "topic": "Component Testing",
-          "solution": "Use `fixture.nativeElement` and `detectChanges()` to test DOM rendering."
-        }
-      ]
-    },  
-    {
-      "day": 7,
-      "sections": [
-        {
-          "title": "JavaScript",
-          "topic": "Truthy/Falsy Values",
-          "solution": "Falsy: `0`, `''`, `null`, `undefined`, `NaN`, `false`"
-        },
-        {
-          "title": "Angular",
-          "topic": "HTTP Interceptor",
-          "solution": "Inject token header using `HttpInterceptor` with `.clone()`."
-        },
-        {
-          "title": "TypeScript",
-          "topic": "Union + Intersection Types",
-          "solution": "```ts\ntype Admin = A & B;\n```"
-        },
-        {
-          "title": "HTML",
-          "topic": "ARIA Roles",
-          "solution": "`aria-label`, `role`, and `tabindex` for accessibility"
-        },
-        {
-          "title": "CSS",
-          "topic": "Units - rem, %, vw",
-          "solution": "`font-size: 1.2rem; width: 80vw;`"
-        },
-        {
-          "title": "Unit Testing",
-          "topic": "Spying + Mocks",
-          "solution": "`spyOn(service, 'fetch').and.returnValue(...)`"
-        }
-      ]
-    },
-    {
-      "day": 8,
-      "sections": [
-        {
-          "title": "JavaScript",
-          "topic": "Optional Chaining & ??",
-          "solution": "`user?.profile?.email ?? 'Guest'`"
-        },
-        {
-          "title": "Angular",
-          "topic": "NgTemplateOutlet",
-          "solution": "`<ng-container *ngTemplateOutlet=\"myRef\"></ng-container>`"
-        },
-        {
-          "title": "Tooling",
-          "topic": "ESLint Setup",
-          "solution": "```json\n\"extends\": [\"plugin:@angular-eslint/recommended\"]\n```"
-        },
-        {
-          "title": "CSS",
-          "topic": "Theming with CSS Variables",
-          "solution": "```css\n:root { --bg: #fff; }\n```"
-        },
-        {
-          "title": "Unit Testing",
-          "topic": "Async Tests",
-          "solution": "`fakeAsync` + `tick()` or `async` + `whenStable()`"
-        }
-      ]
-    },
-    {
-        "day": 9,
-        "sections": [
-          {
-            "title": "JavaScript",
-            "topic": "Set, Map, WeakMap",
-            "solution": "### 🗃️ Data Collections\n```js\nconst set = new Set([1, 2, 2]); // => Set(2) {1, 2}\nconst map = new Map();\nmap.set('name', 'Rajesh');\n\nconst weakMap = new WeakMap();\nconst obj = {};\nweakMap.set(obj, 'secret');\n```"
-          },
-          {
-            "title": "Angular",
-            "topic": "Reactive Form Basics",
-            "solution": "### 🧩 FormGroup + FormControl\n```ts\nthis.profileForm = new FormGroup({\n  firstName: new FormControl('', Validators.required),\n  email: new FormControl('', [Validators.required, Validators.email])\n});\n```"
-          },
-          {
-            "title": "CSS",
-            "topic": "Transitions and Hover Effects",
-            "solution": "```css\nbutton {\n  background: #0088cc;\n  transition: background 0.3s ease-in-out;\n}\nbutton:hover {\n  background: #005577;\n}\n```"
-          },
-          {
-            "title": "Unit Testing",
-            "topic": "Form Validation Testing",
-            "solution": "```ts\nit('should mark form invalid when empty', () => {\n  expect(form.valid).toBeFalse();\n});\n```"
-          },
-          {
-            "title": "Frontend Architecture",
-            "topic": "Smart vs Dumb Components",
-            "solution": "Separate presentation (dumb) from logic (smart) for reusable UI:\n- Smart: fetches data, handles state.\n- Dumb: receives props via @Input."
+            "question": "Which tag defines the main content area?",
+            "options": [
+              "<div>",
+              "<main>",
+              "<body>",
+              "<section>"
+            ],
+            "answer": "<main>"
           }
         ]
       },
       {
-        "day": 10,
-        "sections": [
+        "title": "CSS",
+        "topic": "Selectors, Box Model & Flexbox Basics",
+        "summary": "Learn how to select elements and structure layouts with Flexbox.",
+        "solution": "### 🎯 Selectors\n```css\n#id { color: red; }\n.class { font-weight: bold; }\nelement { margin: 0; }\n```\n\n### 📦 Box Model\n\n### 📐 Flexbox Basics\n```css\n.container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n```",
+        "image": "assets/images/day1/css-flexbox.png",
+        "interviewQuestions": [
           {
-            "title": "Mini Project",
-            "topic": "Profile Manager App (Form + Validation + Save)",
-            "solution": "🛠️ Create a basic profile page:\n- Use Angular reactive forms.\n- Validate name, email, and country.\n- Add submit button to print/save data.\n- Bonus: store in localStorage.\n\n### Extra Details\n- Use `<mat-form-field>` and `MatInputModule`.\n- Add avatar preview with file upload input.\n- Show toast on successful save using Angular Material Snackbar."
+            "question": "What is the default box-sizing in CSS?",
+            "answer": "content-box",
+            "showAnswer": false
           },
           {
-            "title": "Challenge Bonus",
-            "topic": "Unit Test Your Profile Component",
-            "solution": "Write test cases for:\n- Required validation\n- Valid form submission\n- LocalStorage interaction (mock it)"
+            "question": "How does flex-grow differ from flex-basis?",
+            "answer": "flex-grow defines how much a flex item can grow, while flex-basis defines the initial size.",
+            "showAnswer": false
+          }
+        ],
+        "challenge": "Recreate a navbar using flexbox with space-between items.",
+        "quiz": [
+          {
+            "question": "Which property sets horizontal spacing in Flexbox?",
+            "options": [
+              "align-items",
+              "justify-content",
+              "flex-direction"
+            ],
+            "answer": "justify-content"
+          }
+        ]
+      },
+      {
+        "title": "JavaScript",
+        "topic": "Variable Declarations (var, let, const)",
+        "summary": "Learn the differences between var, let, and const with scope behavior.",
+        "solution": "### 🔢 Variable Declaration\n```js\nvar a = 10;\nlet b = 20;\nconst c = 30;\n```\n- `var` → function-scoped, hoisted\n- `let` → block-scoped\n- `const` → block-scoped + constant reference\n\n### 🔁 Quick Tip\n```js\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n} // Prints 3, 3, 3 due to var\n```",
+        "image": "assets/images/day1/js-var-let-const.png",
+        "interviewQuestions": [
+          {
+            "question": "Explain hoisting in JavaScript.",
+            "answer": "Hoisting moves declarations to the top of the scope during compilation.",
+            "showAnswer": false
+          },
+          {
+            "question": "Which is preferred for loop counters and why?",
+            "answer": "Use 'let' for loop counters to avoid closure issues.",
+            "showAnswer": false
+          }
+        ],
+        "challenge": "Write a timer loop that correctly prints 0 to 4 using let.",
+        "quiz": [
+          {
+            "question": "Which is block scoped?",
+            "options": [
+              "var",
+              "let",
+              "none"
+            ],
+            "answer": "let"
+          }
+        ]
+      },
+      {
+        "title": "TypeScript",
+        "topic": "Basic Types & Interfaces",
+        "summary": "Understand primitive types and how to define object shapes using interfaces.",
+        "solution": "### ✅ Basic Types\n```ts\nlet username: string = 'Raj';\nlet score: number = 100;\nlet isActive: boolean = true;\n```\n\n### ✍️ Interface Example\n```ts\ninterface User {\n  name: string;\n  age: number;\n}\n```",
+        "image": "assets/images/ts-interfaces.png",
+        "interviewQuestions": [
+          {
+            "question": "What is the difference between interface and type alias?",
+            "answer": "Interfaces are extendable and preferred for object structures. Types are more flexible.",
+            "showAnswer": false
+          },
+          {
+            "question": "Can interfaces extend multiple other interfaces?",
+            "answer": "Yes, using `extends` keyword.",
+            "showAnswer": false
+          }
+        ],
+        "challenge": "Define a Product interface with optional fields and use it.",
+        "quiz": [
+          {
+            "question": "Which keyword defines a contract in TS?",
+            "options": [
+              "type",
+              "interface",
+              "class"
+            ],
+            "answer": "interface"
+          }
+        ]
+      },
+      {
+        "title": "Angular",
+        "topic": "Project Structure Overview",
+        "summary": "Overview of Angular CLI file structure and key files.",
+        "solution": "### 📁 Angular CLI Structure\n- `src/app/` → Components, services, modules\n- `main.ts` → Entry point\n- `app.module.ts` → Root module\n\n```ts\n@NgModule({\n  declarations: [...],\n  imports: [...],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```",
+        "image": "assets/images/angular-structure.png",
+        "interviewQuestions": [
+          {
+            "question": "What is the role of main.ts in Angular?",
+            "answer": "It bootstraps the root module to launch the app.",
+            "showAnswer": false
+          },
+          {
+            "question": "What does AppModule contain?",
+            "answer": "It declares, imports and bootstraps the app component tree.",
+            "showAnswer": false
+          }
+        ],
+        "challenge": "Create a new component and add it to AppModule.",
+        "quiz": [
+          {
+            "question": "What file contains the root module?",
+            "options": [
+              "app.component.ts",
+              "main.ts",
+              "app.module.ts"
+            ],
+            "answer": "app.module.ts"
           }
         ]
       }
+    ]
+  }
 ]

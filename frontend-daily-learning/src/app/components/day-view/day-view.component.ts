@@ -1,12 +1,11 @@
 import { Component,inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TabViewComponent } from '../tab-view/tab-view.component';
-import { SolutionToggleComponent } from '../solution-toggle/solution-toggle.component';
 
 @Component({
   selector: 'app-day-view',
   standalone: true,
-  imports: [TabViewComponent, SolutionToggleComponent],
+  imports: [TabViewComponent,],
   templateUrl: './day-view.component.html',
   styleUrl: './day-view.component.css'
 })
