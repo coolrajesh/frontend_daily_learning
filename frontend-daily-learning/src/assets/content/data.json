@@ -5,9 +5,9 @@
       {
         "title": "HTML",
         "topic": "HTML Boilerplate & Semantic Tags",
-        "summary": "Understand the basic HTML5 structure and semantic elements.",
-        "solution": "### 🚀 HTML5 Boilerplate\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Day 1 Learning</title>\n</head>\n<body>\n  <header><h1>Welcome</h1></header>\n  <main><p>Main content</p></main>\n  <footer>&copy; 2025</footer>\n</body>\n</html>\n```\n\n### 🧩 Semantic Elements\n- `<header>`, `<footer>`, `<main>`, `<section>`, `<article>` – improve accessibility and SEO.",
-        "image": "assets/images/day1/html-semantics.png",
+        "summary": "✅ Understand the basic HTML5 structure and types of elements.",
+        "solution": "### 🚀 HTML5 Boilerplate\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Day 1 Learning</title>\n</head>\n<body>\n  <header><h1>Welcome</h1></header>\n  <main><p>Main content</p></main>\n  <footer>&copy; 2025</footer>\n</body>\n</html>\n```\n\n### 🧩 Semantic Elements\n- `<header>`, `<footer>`, `<main>`, `<section>`, `<article>` – improve accessibility and SEO.\n\n### 🔹 Inline Elements\n- Inline elements don't break the flow: `<span>`, `<a>`, `<em>`, `<strong>`, `<img>`, `<label>`\n\n### 🔸 Block-Level Elements\n- These create a new block of content: `<div>`, `<p>`, `<h1>` to `<h6>`, `<section>`, `<article>`, `<table>`\n\n### 🔻 Void Elements\n- These have no closing tag: `<img>`, `<input>`, `<br>`, `<hr>`, `<meta>`, `<link>`\n\n### 💬 HTML Interview Q&A\n- **Q1:** What is the difference between `<div>` and `<span>`?\n  - **A:** `<div>` is block-level (layout container), while `<span>` is inline (text styling).\n\n- **Q2:** Why is semantic HTML important?\n  - **A:** It improves readability, SEO, and accessibility by using meaningful tags.\n\n- **Q3:** What are void elements?\n  - **A:** HTML elements that do not require a closing tag, like `<img>` and `<br>`.\n\n- **Q4:** Can we nest block elements inside inline elements?\n  - **A:** No. Inline elements can be nested inside block elements, but not vice versa.\n\n- **Q5:** What does the `<meta>` tag do?\n  - **A:** It defines metadata such as character encoding, viewport settings, and page description.",
+        "images": ["assets/images/day1/html-semantics.png"],
         "interviewQuestions": [
           {
             "question": "What are semantic tags in HTML?",
@@ -18,6 +18,26 @@
             "question": "Why is semantic HTML important for accessibility?",
             "answer": "It helps screen readers and improves SEO.",
             "showAnswer": false
+          },
+          {
+            "question": "What is the difference between <div> and <span>?",
+            "answer": "<div> is block-level for layout; <span> is inline for styling small text."
+          },
+          {
+            "question": "Why is semantic HTML important?",
+            "answer": "It improves accessibility, SEO, and makes code more readable and meaningful."
+          },
+          {
+            "question": "What are void elements in HTML?",
+            "answer": "Elements like <img> or <br> that don’t need closing tags or children."
+          },
+          {
+            "question": "How does the <meta> tag affect your webpage?",
+            "answer": "It defines metadata like encoding and viewport behavior for browsers and search engines."
+          },
+          {
+            "question": "Can block-level elements contain inline elements?",
+            "answer": "Yes, nesting inline elements inside blocks is common and valid."
           }
         ],
         "challenge": "Build a simple portfolio HTML using semantic elements.",
@@ -31,128 +51,328 @@
               "<section>"
             ],
             "answer": "<main>"
+          },
+          {
+            "question": "Which element is used to insert a line break?",
+            "options": [
+              "<hr>",
+              "<br>",
+              "<break>",
+              "<line>"
+            ],
+            "answer": "<br>"
+          },
+          {
+            "question": "What does the <meta> tag do?",
+            "options": [
+              "Adds metadata to the page",
+              "Links stylesheets",
+              "Displays content",
+              "Defines a paragraph"
+            ],
+            "answer": "Adds metadata to the page"
+          },
+          {
+            "question": "Which HTML tag is a void element?",
+            "options": [
+              "<p>",
+              "<span>",
+              "<input>",
+              "<section>"
+            ],
+            "answer": "<input>"
+          },
+          {
+            "question": "What is the purpose of the <nav> element?",
+            "options": [
+              "Displays images",
+              "Groups navigation links",
+              "Defines table rows",
+              "Marks form inputs"
+            ],
+            "answer": "Groups navigation links"
+          },
+          {
+            "question": "Which tag is used to create a hyperlink?",
+            "options": [
+              "<link>",
+              "<href>",
+              "<a>",
+              "<ul>"
+            ],
+            "answer": "<a>"
+          },
+          {
+            "question": "What type of element is <span>?",
+            "options": [
+              "Block",
+              "Inline",
+              "Void",
+              "Container"
+            ],
+            "answer": "Inline"
+          },
+          {
+            "question": "Which tag is used for inserting an image?",
+            "options": [
+              "<media>",
+              "<src>",
+              "<img>",
+              "<image>"
+            ],
+            "answer": "<img>"
+          },
+          {
+            "question": "Can a <div> contain inline elements?",
+            "options": [
+              "Yes",
+              "No",
+              "Only <span>",
+              "Only <a>"
+            ],
+            "answer": "Yes"
+          },
+          {
+            "question": "Which tag defines a section in a document?",
+            "options": [
+              "<part>",
+              "<section>",
+              "<main>",
+              "<content>"
+            ],
+            "answer": "<section>"
           }
         ]
       },
       {
         "title": "CSS",
-        "topic": "Selectors, Box Model & Flexbox Basics",
-        "summary": "Learn how to select elements and structure layouts with Flexbox.",
-        "solution": "### 🎯 Selectors\n```css\n#id { color: red; }\n.class { font-weight: bold; }\nelement { margin: 0; }\n```\n\n### 📦 Box Model\n\n### 📐 Flexbox Basics\n```css\n.container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n```",
-        "image": "assets/images/day1/css-flexbox.png",
+        "topic": "Introduction to CSS: Syntax, Selectors & Element Types",
+        "summary": "Understand the basics of CSS including how to style elements, differentiate between inline and block-level elements, and explore the box model.",
+        "solution": "### 🎯 Basic Selectors\n```css\n/* ID Selector */\n#welcome { color: blue; }\n\n/* Class Selector */\n.highlight { background-color: yellow; }\n\n/* Element Selector */\np { font-size: 16px; }\n```\n\n### 📦 Box Model Overview\n- `margin` → space outside the element\n- `border` → outline around the element\n- `padding` → space between content and border\n- `content` → actual element content\n\n### 🔹 Inline vs Block Elements\n- Inline: `<span>`, `<a>`, `<strong>` → flow with text, no line break\n- Block: `<div>`, `<p>`, `<h1>` → start on a new line, take full width\n\n### 🔻 Void Elements (No closing tag)\n- Examples: `<img>`, `<br>`, `<hr>`, `<input>`",
+        "images": ["assets/images/day1/css-day-1.png"],
         "interviewQuestions": [
           {
-            "question": "What is the default box-sizing in CSS?",
-            "answer": "content-box",
+            "question": "What are the types of CSS selectors?",
+            "answer": "ID, class, element/tag, universal, attribute, and pseudo selectors.",
             "showAnswer": false
           },
           {
-            "question": "How does flex-grow differ from flex-basis?",
-            "answer": "flex-grow defines how much a flex item can grow, while flex-basis defines the initial size.",
+            "question": "Describe the box model in CSS.",
+            "answer": "The box model includes content, padding, border, and margin in that order from inside out.",
+            "showAnswer": false
+          },
+          {
+            "question": "How do block and inline elements differ?",
+            "answer": "Block elements occupy full width and start on a new line; inline elements flow within text.",
+            "showAnswer": false
+          },
+          {
+            "question": "What is a void element?",
+            "answer": "Void elements are self-closing HTML tags without content, like <br> or <img>.",
             "showAnswer": false
           }
         ],
-        "challenge": "Recreate a navbar using flexbox with space-between items.",
+        "challenge": "Style a simple profile card using block and inline elements, and apply margins and padding for spacing.",
         "quiz": [
           {
-            "question": "Which property sets horizontal spacing in Flexbox?",
+            "question": "Which selector targets elements by ID?",
             "options": [
-              "align-items",
-              "justify-content",
-              "flex-direction"
+              "#",
+              ".",
+              "[]",
+              ":"
             ],
-            "answer": "justify-content"
+            "answer": "#"
+          },
+          {
+            "question": "Which of these is an inline element?",
+            "options": [
+              "<div>",
+              "<section>",
+              "<span>",
+              "<p>"
+            ],
+            "answer": "<span>"
+          },
+          {
+            "question": "Which property sets space inside an element’s border?",
+            "options": [
+              "margin",
+              "padding",
+              "border",
+              "outline"
+            ],
+            "answer": "padding"
+          },
+          {
+            "question": "Which element does NOT require a closing tag?",
+            "options": [
+              "<div>",
+              "<img>",
+              "<p>",
+              "<main>"
+            ],
+            "answer": "<img>"
           }
         ]
       },
       {
         "title": "JavaScript",
-        "topic": "Variable Declarations (var, let, const)",
-        "summary": "Learn the differences between var, let, and const with scope behavior.",
-        "solution": "### 🔢 Variable Declaration\n```js\nvar a = 10;\nlet b = 20;\nconst c = 30;\n```\n- `var` → function-scoped, hoisted\n- `let` → block-scoped\n- `const` → block-scoped + constant reference\n\n### 🔁 Quick Tip\n```js\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n} // Prints 3, 3, 3 due to var\n```",
-        "image": "assets/images/day1/js-var-let-const.png",
+        "topic": "Basics: Data Types, Variable Declarations, and Scope",
+        "summary": "Learn how JavaScript handles data, variable declarations (`var`, `let`, `const`), scope, and hoisting behavior.",
+        "solution": "### 🔢 Variable Declaration\n```js\nvar a = 10;\nlet b = 20;\nconst c = 30;\n```\n- `var` → function-scoped, hoisted\n- `let` → block-scoped\n- `const` → block-scoped, immutable reference\n\n### 📌 Data Types\n- Primitive: `string`, `number`, `boolean`, `null`, `undefined`, `symbol`\n- Reference: `object`, `array`, `function`\n\n### 🔁 Scope & Hoisting\n```js\nfunction testVar() {\n  console.log(x); // undefined\n  var x = 5;\n}\n```\n- `var` is hoisted and initialized as `undefined`\n- `let` and `const` are hoisted but not initialized (TDZ)",
+        "images": ["assets/images/day1/js-day-1-1.png", "assets/images/day1/js-day-1-2.png", "assets/images/day1/js-day-1-3.png"],
         "interviewQuestions": [
           {
-            "question": "Explain hoisting in JavaScript.",
-            "answer": "Hoisting moves declarations to the top of the scope during compilation.",
+            "question": "What are the differences between var, let, and const?",
+            "answer": "`var` is function-scoped and hoisted; `let` and `const` are block-scoped. `const` cannot be reassigned.",
             "showAnswer": false
           },
           {
-            "question": "Which is preferred for loop counters and why?",
-            "answer": "Use 'let' for loop counters to avoid closure issues.",
+            "question": "What is hoisting?",
+            "answer": "Hoisting moves variable and function declarations to the top of their scope.",
+            "showAnswer": false
+          },
+          {
+            "question": "Why is let preferred in loops?",
+            "answer": "`let` has block-level scope and avoids closure-related bugs in asynchronous loops.",
             "showAnswer": false
           }
         ],
-        "challenge": "Write a timer loop that correctly prints 0 to 4 using let.",
+        "challenge": "Write a loop using let that correctly prints values from 0 to 4 with setTimeout.",
         "quiz": [
           {
-            "question": "Which is block scoped?",
+            "question": "Which keyword is block scoped?",
             "options": [
               "var",
               "let",
-              "none"
+              "function"
             ],
             "answer": "let"
+          },
+          {
+            "question": "Which of these is a primitive type?",
+            "options": [
+              "array",
+              "object",
+              "string"
+            ],
+            "answer": "string"
+          },
+          {
+            "question": "What does hoisting affect?",
+            "options": [
+              "Execution speed",
+              "Scope visibility",
+              "Variable & function declarations"
+            ],
+            "answer": "Variable & function declarations"
           }
         ]
       },
       {
         "title": "TypeScript",
-        "topic": "Basic Types & Interfaces",
-        "summary": "Understand primitive types and how to define object shapes using interfaces.",
-        "solution": "### ✅ Basic Types\n```ts\nlet username: string = 'Raj';\nlet score: number = 100;\nlet isActive: boolean = true;\n```\n\n### ✍️ Interface Example\n```ts\ninterface User {\n  name: string;\n  age: number;\n}\n```",
-        "image": "assets/images/ts-interfaces.png",
+        "topic": "Primitive Types, Interfaces, and Type Safety",
+        "summary": "Explore how TypeScript improves JavaScript with strong typing, interfaces, and compile-time checks.",
+        "solution": "### ✅ Basic Types\n```ts\nlet name: string = \"Anu\";\nlet score: number = 85;\nlet passed: boolean = true;\n```\n\n### ✍️ Interfaces\n```ts\ninterface Product {\n  id: number;\n  name: string;\n  price?: number; // optional\n}\n```\n\n### 🔐 Type Safety\n- Prevents type mismatches\n- Improves tooling & autocomplete\n- Makes code self-documenting",
+        "images": ["assets/images/day1/ts-day-1-1.png"],
         "interviewQuestions": [
           {
-            "question": "What is the difference between interface and type alias?",
-            "answer": "Interfaces are extendable and preferred for object structures. Types are more flexible.",
+            "question": "What are TypeScript's basic types?",
+            "answer": "`string`, `number`, `boolean`, `any`, `void`, `undefined`, `null`.",
             "showAnswer": false
           },
           {
-            "question": "Can interfaces extend multiple other interfaces?",
-            "answer": "Yes, using `extends` keyword.",
+            "question": "When should you use interfaces?",
+            "answer": "Interfaces are best for defining structured object shapes in reusable type contracts.",
+            "showAnswer": false
+          },
+          {
+            "question": "Can interfaces extend multiple others?",
+            "answer": "Yes, using comma-separated `extends` syntax.",
             "showAnswer": false
           }
         ],
-        "challenge": "Define a Product interface with optional fields and use it.",
+        "challenge": "Define an interface for a `UserProfile` with optional fields for email and age. Create a typed object using it.",
         "quiz": [
           {
-            "question": "Which keyword defines a contract in TS?",
+            "question": "Which keyword creates a reusable object structure?",
             "options": [
-              "type",
               "interface",
-              "class"
+              "class",
+              "module"
             ],
             "answer": "interface"
+          },
+          {
+            "question": "Which type allows any value?",
+            "options": [
+              "unknown",
+              "any",
+              "void"
+            ],
+            "answer": "any"
+          },
+          {
+            "question": "Which type represents nothing returned?",
+            "options": [
+              "undefined",
+              "void",
+              "null"
+            ],
+            "answer": "void"
           }
         ]
       },
       {
         "title": "Angular",
-        "topic": "Project Structure Overview",
-        "summary": "Overview of Angular CLI file structure and key files.",
-        "solution": "### 📁 Angular CLI Structure\n- `src/app/` → Components, services, modules\n- `main.ts` → Entry point\n- `app.module.ts` → Root module\n\n```ts\n@NgModule({\n  declarations: [...],\n  imports: [...],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```",
-        "image": "assets/images/angular-structure.png",
+        "topic": "CLI Project Structure, Modules & Components",
+        "summary": "Understand the structure created by Angular CLI, how the app bootstraps, and how to organize features using modules and components.",        
+        "solution": "### 🚀 Angular App Bootstrapping Flow\n\n#### 1️⃣ `main.ts` — The Starting Point\n```ts\nplatformBrowserDynamic().bootstrapModule(AppModule)\n  .catch(err => console.error(err));\n```\n- This file is the true entry point and kicks off the app by bootstrapping the root module.\n\n#### 2️⃣ `app.module.ts` — The Root Module\n```ts\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```\n- Declares the top-level components\n- Imports other modules like BrowserModule\n- Specifies which component to render first via `bootstrap`\n\n#### 3️⃣ `app.component.ts` — The Root Component\n```ts\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {}\n```\n- Contains core template logic\n- Serves as the host view that Angular replaces into `index.html`\n\n#### 4️⃣ `index.html` — Static Shell\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <title>Angular App</title>\n</head>\n<body>\n  <app-root></app-root>\n</body>\n</html>\n```\n- The first file served by the browser\n- `<app-root>` is replaced by `AppComponent`\n\n### 📁 Execution Order Summary\n| Step | File             | Role                                               |\n|------|------------------|----------------------------------------------------|\n| 1    | `main.ts`        | Bootstraps `AppModule`                            |\n| 2    | `app.module.ts`  | Declares components, imports modules              |\n| 3    | `app.component.ts` | First visual component loaded                    |\n| 4    | `index.html`     | Static container holding `<app-root>`            |\n\n### 🛠 Other Key Concepts\n- `angular.json` — CLI config for build, serve, and file paths\n- `environment.ts` — Environment-specific settings\n- `AppRoutingModule` — Declares and routes paths\n- `@NgModule` — Decorator that organizes Angular modules\n- `BrowserModule` — Required for running Angular in the browser",        
+        "images": ["assets/images/day1/ng-day-1-1.png", "assets/images/day1/ng-day-1-2.png", "assets/images/day1/ng-day-1-3.png","assets/images/day1/ng-day-1-4.png"],
         "interviewQuestions": [
           {
-            "question": "What is the role of main.ts in Angular?",
-            "answer": "It bootstraps the root module to launch the app.",
+            "question": "What does `main.ts` do in Angular?",
+            "answer": "It bootstraps the root module (`AppModule`) to launch the application.",
             "showAnswer": false
           },
           {
-            "question": "What does AppModule contain?",
-            "answer": "It declares, imports and bootstraps the app component tree.",
+            "question": "Where are components declared?",
+            "answer": "Components are listed inside the `declarations` array of a module.",
+            "showAnswer": false
+          },
+          {
+            "question": "What is the purpose of `@NgModule`?",
+            "answer": "It defines a module’s metadata, including declarations, imports, and bootstrap.",
             "showAnswer": false
           }
         ],
-        "challenge": "Create a new component and add it to AppModule.",
+        "challenge": "Use Angular CLI to generate a new component named `UserCard` and display it inside `AppComponent`.",
         "quiz": [
           {
-            "question": "What file contains the root module?",
+            "question": "Which file is the Angular entry point?",
             "options": [
-              "app.component.ts",
+              "app.module.ts",
               "main.ts",
-              "app.module.ts"
+              "index.html"
+            ],
+            "answer": "main.ts"
+          },
+          {
+            "question": "What decorator is used to define a module?",
+            "options": [
+              "@Component",
+              "@Injectable",
+              "@NgModule"
+            ],
+            "answer": "@NgModule"
+          },
+          {
+            "question": "Where is the root component listed?",
+            "options": [
+              "main.ts",
+              "app.module.ts",
+              "app.component.ts"
             ],
             "answer": "app.module.ts"
           }

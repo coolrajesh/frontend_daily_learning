@@ -21,7 +21,7 @@ export class TabViewComponent {
     topic: string;
     solution: string;
     summary?: string;
-    image?: string;
+    images?: string[];
     challenge?: string;
     interviewQuestions?: { question: string; answer: string; showAnswer: boolean, reviewed: string, difficulty:string }[];
     quiz?: {
@@ -37,6 +37,7 @@ export class TabViewComponent {
   day: number = 1;
   loading = false;
   errorMessage = '';
+  imageLoadStatus: boolean[] = [];
 
   constructor(private http: HttpClient) { }
 

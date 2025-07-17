@@ -1,10 +1,18 @@
-<header class="flex justify-between items-center p-4 bg-blue-600 text-white shadow">
-    <h1 class="text-xl font-bold">💻 Frontend Daily Learning</h1>
-    <!-- <button (click)="toggleTheme()" class="bg-white text-blue-600 px-3 py-1 rounded">
-        Toggle Theme
-    </button> -->
+<header class="bg-indigo-600 text-white py-6 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6">
+        <div class="flex items-center space-x-3">
+            <img src="assets/logo.png" alt="Logo" class="h-12 w-12 rounded-full border-2 border-white">
+            <h1 class="text-2xl font-semibold tracking-wide">Your Daily Dive</h1>
+        </div>
+        <nav class="space-x-6 text-sm font-medium">
+            <a routerLink="/" class="hover:underline">Dashboard</a>
+            <a routerLink="/about" class="hover:underline">About</a>
+        </nav>
+    </div>
 </header>
 <router-outlet />
-<footer class="flex justify-between items-center p-4 bg-blue-600 text-white shadow">
-    
-</footer> 
+<footer class="bg-indigo-700 text-white py-4">
+    <div class="text-center text-sm">
+        Crafted with 💙 by Team MCA &mdash; 2025
+    </div>
+</footer>
