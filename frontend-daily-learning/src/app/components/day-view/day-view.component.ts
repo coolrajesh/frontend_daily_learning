@@ -22,7 +22,7 @@ export class DayViewComponent implements OnInit {
   currentDay: number = 1;
   days = Array.from({ length: 90 }, (_, i) => i + 1);
   groupedDays: any = [];
-  sidebarOpen = true; 
+  sidebarOpen = false; 
   completedDays: number[] = [];
   showConfirm = false;
   isCompleted = false;
