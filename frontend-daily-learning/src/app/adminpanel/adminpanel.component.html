@@ -1,0 +1,41 @@
+<div class="p-6 max-w-5xl mx-auto font-sans space-y-6">
+    <h2 class="text-2xl font-bold text-blue-700">🛠️ Admin Panel – Content Formatter</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <input [(ngModel)]="sectionTitle" placeholder="Section Title" class="border p-2 rounded" />
+        <input [(ngModel)]="sectionEmoji" placeholder="Emoji" class="border p-2 rounded" />
+        <select [(ngModel)]="sectionTag" class="border p-2 rounded">
+            <option value="h3">h3</option>
+            <option value="h4">h4</option>
+        </select>
+        <input type="color" [(ngModel)]="sectionColor" class="border p-2 rounded" />
+    </div>
+
+    <div *ngFor="let b of bindings; let i = index" class="grid grid-cols-2 md:grid-cols-6 gap-4 items-center">
+        <input [(ngModel)]="b.emoji" placeholder="Emoji" class="border p-2 rounded" />
+        <input [(ngModel)]="b.label" placeholder="Label" class="border p-2 rounded" />
+        <input [(ngModel)]="b.syntax" placeholder="Syntax" class="border p-2 rounded" />
+        <input [(ngModel)]="b.description" placeholder="Description" class="border p-2 rounded" />
+        <input type="color" [(ngModel)]="b.color" class="border p-2 rounded" />
+        <select [(ngModel)]="b.tag" class="border p-2 rounded">
+            <option value="li">li</option>
+            <option value="p">p</option>
+        </select>
+        <button (click)="removeBinding(i)" class="text-red-600 hover:underline">🗑️</button>
+    </div>
+
+    <button (click)="addBinding()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">➕ Add
+        Binding</button>
+
+    <div class="space-y-4 mt-6">
+        <h3 class="text-xl font-semibold text-gray-700">🔍 Live Preview</h3>
+        <div [innerHTML]="generateSummary()" class="border p-4 bg-gray-50 rounded shadow-sm"></div>
+
+        <h3 class="text-xl font-semibold text-gray-700">📤 JSON Export</h3>
+        <textarea [value]="getJsonExport()" rows="10" class="w-full border p-2 rounded font-mono text-sm"></textarea>
+
+        <h3 class="text-xl font-semibold text-gray-700">📝 Markdown Export</h3>
+        <textarea [value]="getMarkdownExport()" rows="10"
+            class="w-full border p-2 rounded font-mono text-sm"></textarea>
+    </div>
+</div>

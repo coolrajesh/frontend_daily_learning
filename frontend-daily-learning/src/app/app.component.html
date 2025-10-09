@@ -1,18 +1,22 @@
+<div class="min-h-screen flex flex-col">
 <header class="bg-indigo-600 text-white py-6 shadow-lg">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6">
         <div class="flex items-center space-x-3">
-            <img src="assets/logo.png" alt="Logo" class="h-12 w-12 rounded-full border-2 border-white">
+            <a routerLink ="/"><img src="assets/logo.png" alt="Logo" class="h-12 w-12 rounded-full border-2 border-white"></a>
             <h1 class="text-2xl font-semibold tracking-wide">Your Daily Dive</h1>
         </div>
         <nav class="space-x-6 text-sm font-medium">
-            <a routerLink="/" class="hover:underline">Dashboard</a>
+            <a routerLink="/explore-topics" class="hover:underline">Explore Topics</a>
             <a routerLink="/about" class="hover:underline">About</a>
         </nav>
     </div>
 </header>
-<router-outlet />
+<main class="flex-grow">
+    <router-outlet/>
+</main>
 <footer class="bg-indigo-700 text-white py-4">
     <div class="text-center text-sm">
-        Crafted with 💙 by Team MCA &mdash; 2025
+        Crafted with 💙 by Rajesh &mdash; 2025
     </div>
 </footer>
+</div>

@@ -33,7 +33,9 @@ export class DayViewComponent implements OnInit {
       const id = params.get('id');
       this.dayId = id ?? '';
       this.currentDay = parseInt(id ?? '1', 10);
-      this.tabViewComponent.loadDayContent();
+      if (this.tabViewComponent) {
+        this.tabViewComponent.loadDayContent();
+      }
     });
     // Group days into ranges of 10
     this.groupedDays = Array.from({ length: 9 }, (_, i) => {
