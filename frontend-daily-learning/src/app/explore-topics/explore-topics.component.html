@@ -1,145 +1,165 @@
 <div class="max-w-screen-xl mx-auto px-4 py-6">
-    <h1 class="text-3xl font-bold text-center mb-8 text-blue-700">
-        📘 60-Day Interview Prep Tracker
-    </h1>
+  <h1 class="text-3xl font-bold text-center mb-8 text-blue-700">
+    📘 60-Day Interview Prep Tracker
+  </h1>
 
-    <!-- Phase: Fundamentals (Days 1–10) -->
-    <details class="group mb-6 border rounded shadow-md">
-        <summary class="bg-blue-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
-            🟩 Days 1–10: Fundamentals Phase
-            <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
-        </summary>
-        <div class="overflow-x-auto">
-            <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
-                <thead class="bg-blue-50">
-                    <tr>
-                        <th class="px-1 py-2 border">Day</th>
-                        <th class="px-1 py-2 border">HTML</th>
-                        <th class="px-1 py-2 border">CSS</th>
-                        <th class="px-1 py-2 border">JavaScript</th>
-                        <th class="px-1 py-2 border">TypeScript</th>
-                        <th class="px-1 py-2 border">Angular</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (topic of prepTopics.slice(0,10); track topic.day){
-                    <tr 
-                        class="hover:bg-blue-50 even:bg-gray-50">
-                        <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
-                        <td class="px-3 py-2 border">{{ topic.html }}</td>
-                        <td class="px-3 py-2 border">{{ topic.css }}</td>
-                        <td class="px-3 py-2 border">{{ topic.js }}</td>
-                        <td class="px-3 py-2 border">{{ topic.ts }}</td>
-                        <td class="px-3 py-2 border">{{ topic.angular }}</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-    </details>
+  <!-- Phase: Fundamentals (Days 1–10) -->
+  <details id="fundamentals" class="group mb-6 border rounded shadow-md">
+    <summary class="bg-blue-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
+      🟩 Days 1–10: Fundamentals Phase
+      <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
+    </summary>
+    <div class="p-4 bg-blue-50 border-t">
+      <p>Focus on HTML, CSS basics, JS fundamentals, TypeScript types, and Angular setup.</p>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+        <div class="bg-blue-500 h-2 rounded-full" style="width:30%"></div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
+        <thead class="bg-blue-50">
+          <tr>
+            <th class="px-1 py-2 border">Day</th>
+            <th class="px-1 py-2 border">HTML</th>
+            <th class="px-1 py-2 border">CSS</th>
+            <th class="px-1 py-2 border">JavaScript</th>
+            <th class="px-1 py-2 border">TypeScript</th>
+            <th class="px-1 py-2 border">Angular</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (topic of prepTopics.slice(0,10); track topic.day){
+          <tr class="hover:bg-blue-50 even:bg-gray-50">
+            <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
+            <td class="px-3 py-2 border">{{ topic.html }}</td>
+            <td class="px-3 py-2 border">{{ topic.css }}</td>
+            <td class="px-3 py-2 border">{{ topic.js }}</td>
+            <td class="px-3 py-2 border">{{ topic.ts }}</td>
+            <td class="px-3 py-2 border">{{ topic.angular }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
 
-    <!-- Phase: Intermediate (Days 11–30) -->
-    <details class="group mb-6 border rounded shadow-md">
-        <summary class="bg-green-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
-            🟨 Days 11–30: Intermediate Phase
-            <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
-        </summary>
-        <div class="overflow-x-auto">
-            <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
-                <thead class="bg-green-50">
-                    <tr>
-                        <th class="px-3 py-2 border">Day</th>
-                        <th class="px-3 py-2 border">HTML</th>
-                        <th class="px-3 py-2 border">CSS</th>
-                        <th class="px-3 py-2 border">JavaScript</th>
-                        <th class="px-3 py-2 border">TypeScript</th>
-                        <th class="px-3 py-2 border">Angular</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (topic of prepTopics.slice(10,30); track topic.day){
-                    <tr 
-                        class="hover:bg-green-50 even:bg-gray-50">
-                        <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
-                        <td class="px-3 py-2 border">{{ topic.html }}</td>
-                        <td class="px-3 py-2 border">{{ topic.css }}</td>
-                        <td class="px-3 py-2 border">{{ topic.js }}</td>
-                        <td class="px-3 py-2 border">{{ topic.ts }}</td>
-                        <td class="px-3 py-2 border">{{ topic.angular }}</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-    </details>
+  <!-- Phase: Intermediate (Days 11–30) -->
+  <details id="intermediate" class="group mb-6 border rounded shadow-md">
+    <summary class="bg-green-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
+      🟨 Days 11–30: Intermediate Phase
+      <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
+    </summary>
+    <div class="p-4 bg-green-50 border-t">
+      <p>Dive deeper into Angular forms, RxJS, routing, and TypeScript advanced types.</p>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+        <div class="bg-green-500 h-2 rounded-full" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
+        <thead class="bg-green-50">
+          <tr>
+            <th class="px-3 py-2 border">Day</th>
+            <th class="px-3 py-2 border">HTML</th>
+            <th class="px-3 py-2 border">CSS</th>
+            <th class="px-3 py-2 border">JavaScript</th>
+            <th class="px-3 py-2 border">TypeScript</th>
+            <th class="px-3 py-2 border">Angular</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (topic of prepTopics.slice(10,30); track topic.day){
+          <tr class="hover:bg-green-50 even:bg-gray-50">
+            <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
+            <td class="px-3 py-2 border">{{ topic.html }}</td>
+            <td class="px-3 py-2 border">{{ topic.css }}</td>
+            <td class="px-3 py-2 border">{{ topic.js }}</td>
+            <td class="px-3 py-2 border">{{ topic.ts }}</td>
+            <td class="px-3 py-2 border">{{ topic.angular }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
 
-    <!-- Phase: Advanced (Days 31–50) -->
-    <details class="group mb-6 border rounded shadow-md">
-        <summary class="bg-yellow-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
-            📙 Days 31–50: Advanced Phase
-            <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
-        </summary>
-        <div class="overflow-x-auto">
-            <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
-                <thead class="bg-yellow-50">
-                    <tr>
-                        <th class="px-3 py-2 border">Day</th>
-                        <th class="px-3 py-2 border">HTML</th>
-                        <th class="px-3 py-2 border">CSS</th>
-                        <th class="px-3 py-2 border">JavaScript</th>
-                        <th class="px-3 py-2 border">TypeScript</th>
-                        <th class="px-3 py-2 border">Angular</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (topic of prepTopics.slice(30,50); track topic.day){
-                    <tr 
-                        class="hover:bg-yellow-50 even:bg-gray-50">
-                        <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
-                        <td class="px-3 py-2 border">{{ topic.html }}</td>
-                        <td class="px-3 py-2 border">{{ topic.css }}</td>
-                        <td class="px-3 py-2 border">{{ topic.js }}</td>
-                        <td class="px-3 py-2 border">{{ topic.ts }}</td>
-                        <td class="px-3 py-2 border">{{ topic.angular }}</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-    </details>
+  <!-- Phase: Advanced (Days 31–50) -->
+  <details id="advanced" class="group mb-6 border rounded shadow-md">
+    <summary class="bg-yellow-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
+      📙 Days 31–50: Advanced Phase
+      <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
+    </summary>
+    <div class="p-4 bg-yellow-50 border-t">
+      <p>Master RxJS, DI, lazy loading, testing, and performance tuning in Angular.</p>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+        <div class="bg-yellow-500 h-2 rounded-full" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
+        <thead class="bg-yellow-50">
+          <tr>
+            <th class="px-3 py-2 border">Day</th>
+            <th class="px-3 py-2 border">HTML</th>
+            <th class="px-3 py-2 border">CSS</th>
+            <th class="px-3 py-2 border">JavaScript</th>
+            <th class="px-3 py-2 border">TypeScript</th>
+            <th class="px-3 py-2 border">Angular</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (topic of prepTopics.slice(30,50); track topic.day){
+          <tr class="hover:bg-yellow-50 even:bg-gray-50">
+            <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
+            <td class="px-3 py-2 border">{{ topic.html }}</td>
+            <td class="px-3 py-2 border">{{ topic.css }}</td>
+            <td class="px-3 py-2 border">{{ topic.js }}</td>
+            <td class="px-3 py-2 border">{{ topic.ts }}</td>
+            <td class="px-3 py-2 border">{{ topic.angular }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
 
-    <!-- Phase: Final Prep (Days 51–60) -->
-    <details class="group mb-6 border rounded shadow-md">
-        <summary class="bg-red-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
-            📒 Days 51–60: Final Prep
-            <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
-        </summary>
-        <div class="overflow-x-auto">
-            <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
-                <thead class="bg-red-50">
-                    <tr>
-                        <th class="px-3 py-2 border">Day</th>
-                        <th class="px-3 py-2 border">HTML</th>
-                        <th class="px-3 py-2 border">CSS</th>
-                        <th class="px-3 py-2 border">JavaScript</th>
-                        <th class="px-3 py-2 border">TypeScript</th>
-                        <th class="px-3 py-2 border">Angular</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (topic of prepTopics.slice(50,60); track topic.day){
-                    <tr 
-                        class="hover:bg-red-50 even:bg-gray-50">
-                        <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
-                        <td class="px-3 py-2 border">{{ topic.html }}</td>
-                        <td class="px-3 py-2 border">{{ topic.css }}</td>
-                        <td class="px-3 py-2 border">{{ topic.js }}</td>
-                        <td class="px-3 py-2 border">{{ topic.ts }}</td>
-                        <td class="px-3 py-2 border">{{ topic.angular }}</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-    </details>
-</div>
+  <!-- Phase: Final Prep (Days 51–60) -->
+  <details id="final" class="group mb-6 border rounded shadow-md">
+    <summary class="bg-red-100 px-4 py-3 cursor-pointer font-semibold text-lg flex justify-between items-center">
+      📒 Days 51–60: Final Prep
+      <span class="group-open:rotate-180 transition-transform text-gray-500">&or;</span>
+    </summary>
+    <div class="p-4 bg-red-50 border-t">
+      <p>Final revision, quizzes, mock interviews, and polishing skills before the interview.</p>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+        <div class="bg-red-500 h-2 rounded-full" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse mt-2 border border-gray-300 text-sm">
+        <thead class="bg-red-50">
+          <tr>
+            <th class="px-3 py-2 border">Day</th>
+            <th class="px-3 py-2 border">HTML</th>
+            <th class="px-3 py-2 border">CSS</th>
+            <th class="px-3 py-2 border">JavaScript</th>
+            <th class="px-3 py-2 border">TypeScript</th>
+            <th class="px-3 py-2 border">Angular</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (topic of prepTopics.slice(50,60); track topic.day){
+          <tr class="hover:bg-red-50 even:bg-gray-50">
+            <td class="px-3 py-2 border font-bold text-center">Day {{ topic.day }}</td>
+            <td class="px-3 py-2 border">{{ topic.html }}</td>
+            <td class="px-3 py-2 border">{{ topic.css }}</td>
+            <td class="px-3 py-2 border">{{ topic.js }}</td>
+            <td class="px-3 py-2 border">{{ topic.ts }}</td>
+            <td class="px-3 py-2 border">{{ topic.angular }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
+

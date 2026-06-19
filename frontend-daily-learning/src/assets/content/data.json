@@ -5,9 +5,9 @@
       {
         "title": "HTML",
         "topic": "HTML Boilerplate & Semantic Tags",
-        "summary": "✅ Understand the basic HTML5 structure and types of elements.",        
+        "summary": "✅ Understand the basic HTML5 structure and types of elements.",
         "solution": "### 🚀 HTML5 Boilerplate\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"HTML5 Learning Starter\">\n  <title>Day 1 Learning</title>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n  <header>\n    <h1>Welcome to HTML5</h1>\n    <nav>\n      <a href=\"#main\">Skip to Content</a>\n    </nav>\n  </header>\n\n  <main>\n    <section>\n      <h2>Introduction</h2>\n      <p>This is the main content area.</p>\n    </section>\n\n    <article>\n      <h2>HTML5 Tips</h2>\n      <p>Use semantic tags for better structure and accessibility.</p>\n    </article>\n  </main>\n\n  <footer>\n    <p>&copy; 2025 YourSite.com</p>\n  </footer>\n</body>\n</html>\n```\n\n### 🧩 Semantic Elements\nSemantic elements describe their meaning in a human- and machine-readable way. They improve accessibility, SEO, and code clarity.\n\n| Element     | Purpose & Use Case                                                                 |\n|-------------|-------------------------------------------------------------------------------------|\n| `<header>`  | Introductory content for a page or section. Often includes logo, nav, or headlines.|\n| `<footer>`  | Closing content—copyright, contact info, related links. Can appear multiple times. |\n| `<main>`    | Central content of the page. Only one per document. Excludes headers/footers.      |\n| `<section>` | Thematic grouping of related content. Each section usually has a heading.          |\n| `<article>` | Self-contained content that can stand alone—blog posts, news items, etc.           |\n\n### 🔹 Inline Elements\nInline elements don’t break the flow of content. They sit within a line and only take up as much space as needed.\n\n`<span>, <a>, <em>, <strong>, <img>, <label>, <input>, <abbr>, <code>, <sub>, <sup>`\n\n| Element     | Purpose                                                                 |\n|-------------|-------------------------------------------------------------------------|\n| `<span>`    | Generic container for styling inline text                               |\n| `<a>`       | Hyperlink to another page or section                                    |\n| `<em>`      | Emphasizes text (usually italic)                                        |\n| `<strong>`  | Marks important text (usually bold)                                     |\n| `<img>`     | Embeds an image inline with text                                        |\n| `<label>`   | Associates text with form controls                                      |\n| `<input>`   | Inline form field                                                       |\n| `<abbr>`    | Abbreviation with optional tooltip (`title` attribute)                  |\n| `<code>`    | Displays code snippets in monospace font                                |\n| `<sub>` / `<sup>` | Subscript and superscript (e.g., chemical formulas, math)         |\n\n### 🔸 Block-Level Elements\nBlock elements start on a new line and take up the full width available. They define structural layout.\n\n`<div>, <p>, <h1>` to `<h6>`, `<section>`, `<article>`, `<table>`, `<form>`, `<ul>`, `<ol>`, `<li>`\n\n| Element     | Purpose                                                                 |\n|-------------|-------------------------------------------------------------------------|\n| `<div>`     | Generic container for layout and grouping                               |\n| `<p>`       | Paragraph of text                                                       |\n| `<h1>`–`<h6>` | Headings from most to least important                                 |\n| `<section>` | Thematic grouping of related content                                    |\n| `<article>` | Self-contained content                                                  |\n| `<table>`   | Tabular data layout                                                     |\n| `<form>`    | Collects user input                                                     |\n| `<ul>`, `<ol>`, `<li>` | Lists and list items                                         |\n\n### 🔻 Void Elements\nVoid elements are self-closing and do not require an end tag.\n\n`<img>, <input>, <br>, <hr>, <meta>, <link>, <source>, <area>, <base>, <col>`\n\n| Element     | Purpose                                                                 |\n|-------------|-------------------------------------------------------------------------|\n| `<img>`     | Embeds an image                                                         |\n| `<input>`   | Form input field                                                        |\n| `<br>`      | Line break                                                              |\n| `<hr>`      | Horizontal rule (divider)                                               |\n| `<meta>`    | Metadata like charset, viewport, description                            |\n| `<link>`    | External resources like stylesheets                                     |\n\n### 💬 HTML Interview Q&A\n- **Q1:** What is the difference between `<div>` and `<span>`?\n  - **A:** `<div>` is block-level (used for layout), while `<span>` is inline (used for styling small text portions).\n\n- **Q2:** Why is semantic HTML important?\n  - **A:** It improves readability, SEO, and accessibility by using meaningful tags that describe content purpose.\n\n- **Q3:** What are void elements?\n  - **A:** HTML elements that do not require a closing tag, like `<img>`, `<br>`, and `<input>`.\n\n- **Q4:** Can we nest block elements inside inline elements?\n  - **A:** No. Inline elements can be nested inside block elements, but block elements cannot be nested inside inline ones.\n\n- **Q5:** What does the `<meta>` tag do?\n  - **A:** It defines metadata such as character encoding (`UTF-8`), viewport settings for responsiveness, and page description for SEO.",
-         "images": ["assets/images/day1/html-semantics.png","assets/images/day1/semantic-element.jpeg"], 
+         "images": ["assets/images/day1/html-semantics.png","assets/images/day1/semantic-element.jpeg"],
         "interviewQuestions": [
           {
             "question": "What are semantic tags in HTML?",
@@ -146,9 +146,9 @@
       },
       {
         "title": "CSS",
-        "topic": "Introduction to CSS: Syntax, Selectors & Element Types",        
+        "topic": "Introduction to CSS: Syntax, Selectors & Element Types",
         "summary": "Understand the basics of CSS including how to style elements, differentiate between inline and block-level elements, and explore the box model.",
-        "solution": "### 🎯 Basic Selectors\n```css\n/* ID Selector */\n#welcome { color: blue; }\n\n/* Class Selector */\n.highlight { background-color: yellow; }\n\n/* Element Selector */\np { font-size: 16px; }\n```\n\n### 📦 Box Model Overview\n- `margin` → space outside the element\n- `border` → outline around the element\n- `padding` → space between content and border\n- `content` → actual element content\n\n### 🔹 Inline vs Block Elements\n- **Inline Elements**: `<span>`, `<a>`, `<strong>` — flow with text, no line break\n- **Block Elements**: `<div>`, `<p>`, `<h1>` — start on a new line, take full width\n\n| **Type**   | **Elements**                          | **Behavior**                                      |\n|-----------|----------------------------------------|--------------------------------------------------|\n| Inline    | `<span>`, `<a>`, `<strong>`            | Do not break line; flow with surrounding content |\n| Block     | `<div>`, `<p>`, `<h1>`                 | Start on a new line; occupy full width           |\n\n### 🔻 Void Elements (No closing tag)\nVoid elements are self-closing and do not require an end tag.\n\n| **Element** | **Purpose**                          |\n|-------------|--------------------------------------|\n| `<img>`     | Embeds an image                      |\n| `<br>`      | Inserts a line break                 |\n| `<hr>`      | Horizontal rule (divider)            |\n| `<input>`   | Form input field                     |",        
+        "solution": "### 🎯 Basic Selectors\n```css\n/* ID Selector */\n#welcome { color: blue; }\n\n/* Class Selector */\n.highlight { background-color: yellow; }\n\n/* Element Selector */\np { font-size: 16px; }\n```\n\n### 📦 Box Model Overview\n✔️ The CSS Box Model defines how browsers calculate the size and spacing of elements.\nIt has four parts:\n- `margin` → space outside the element\n- `border` → outline around the element\n- `padding` → space between content and border\n- `content` → actual element content\n\n👉 **Total size = content + padding + border** (margins add extra spacing but aren’t part of the box size).\n\n### 🔹 Inline vs Block Elements\n- **Inline Elements**: `<span>`, `<a>`, `<strong>` — flow with text, no line break\n- **Block Elements**: `<div>`, `<p>`, `<h1>` — start on a new line, take full width\n\n| **Type**   | **Elements**               | **Behavior**                                      |\n|------------|-----------------------------|--------------------------------------------------|\n| Inline     | `<span>`, `<a>`, `<strong>` | Do not break line; flow with surrounding content |\n| Block      | `<div>`, `<p>`, `<h1>`      | Start on a new line; occupy full width           |\n\n### 🔻 Void Elements (No closing tag)\nVoid elements are self-closing and do not require an end tag.\n\n| **Element** | **Purpose**               |\n|-------------|---------------------------|\n| `<img>`     | Embeds an image           |\n| `<br>`      | Inserts a line break      |\n| `<hr>`      | Horizontal rule (divider) |\n| `<input>`   | Form input field          |",
         "images": ["assets/images/day1/css-day-1.png"],
         "interviewQuestions": [
           {
@@ -272,7 +272,7 @@
       },
       {
         "title": "TypeScript",
-        "topic": "Primitive Types, Interfaces, and Type Safety",       
+        "topic": "Primitive Types, Interfaces, and Type Safety",
         "summary": "Explore how TypeScript improves JavaScript with strong typing, interfaces, and compile-time checks.",
         "solution": "### ✅ Basic Types\n```ts\nlet name: string = \"Anu\";\nlet score: number = 85;\nlet passed: boolean = true;\n```\n- `string`, `number`, and `boolean` are primitive types\n- Type annotations help catch errors during development\n\n### ✍️ Interfaces\n```ts\ninterface Product {\n  id: number;\n  name: string;\n  price?: number; // optional\n}\n```\n- Interfaces define the shape of objects\n- Optional properties use `?`\n- Interfaces support extension and composition\n\n### 🔐 Type Safety\n- Prevents type mismatches at compile time\n- Improves tooling, IDE support, and autocomplete\n- Makes code self-documenting and easier to maintain\n\n### 🧠 Additional Features\n- **Union Types**: `let value: string | number`\n- **Type Aliases**: `type ID = string | number`\n- **Enums**: `enum Status { Pending, Approved, Rejected }`\n- **Generics**: `function identity<T>(arg: T): T { return arg; }`\n\n### 💬 Interview Q&A\n- **Q1:** What is the difference between `interface` and `type`?\n  - **A:** `interface` is best for object shapes and can be extended; `type` is more flexible and can represent unions, primitives, etc.\n\n- **Q2:** What are the benefits of TypeScript over JavaScript?\n  - **A:** TypeScript adds static typing, better tooling, early error detection, and improved code readability\n\n- **Q3:** Can TypeScript run in the browser?\n  - **A:** No, it must be compiled to JavaScript using `tsc` or a bundler like Vite/Webpack\n\n- **Q4:** What is type inference?\n  - **A:** TypeScript can automatically infer types based on assigned values, reducing the need for explicit annotations\n\n- **Q5:** How does TypeScript help with large codebases?\n  - **A:** It enforces contracts via types and interfaces, making refactoring safer and collaboration easier",
         "images": ["assets/images/day1/ts-day-1-1.png"],
@@ -326,9 +326,9 @@
       },
       {
         "title": "Angular",
-        "topic": "CLI Project Structure, Modules & Components",
+        "topic": "Angular CLI & Project Structure",
         "summary": "Understand the structure created by Angular CLI, how the app bootstraps, and how to organize features using modules and components.",
-        "solution": "### 🚀 Angular App Bootstrapping Flow\n\n#### 1️⃣ `main.ts` — The Starting Point\n```ts\nplatformBrowserDynamic().bootstrapModule(AppModule)\n  .catch(err => console.error(err));\n```\n- This file is the true entry point and kicks off the app by bootstrapping the root module.\n\n#### 2️⃣ `app.module.ts` — The Root Module\n```ts\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```\n- Declares the top-level components\n- Imports other modules like BrowserModule\n- Specifies which component to render first via `bootstrap`\n\n#### 3️⃣ `app.component.ts` — The Root Component\n```ts\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {}\n```\n- Contains core template logic\n- Serves as the host view that Angular replaces into `index.html`\n\n#### 4️⃣ `index.html` — Static Shell\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <title>Angular App</title>\n</head>\n<body>\n  <app-root></app-root>\n</body>\n</html>\n```\n- The first file served by the browser\n- `<app-root>` is replaced by `AppComponent`\n\n### 📁 Execution Order Summary\n| Step | File               | Role                                               |\n|------|--------------------|----------------------------------------------------|\n| 1    | `main.ts`          | Bootstraps `AppModule`                            |\n| 2    | `app.module.ts`    | Declares components, imports modules              |\n| 3    | `app.component.ts` | First visual component loaded                     |\n| 4    | `index.html`       | Static container holding `<app-root>`            |\n\n### 🛠 Other Key Concepts\n- `angular.json` — CLI config for build, serve, and file paths\n- `environment.ts` — Environment-specific settings\n- `AppRoutingModule` — Declares and routes paths\n- `@NgModule` — Decorator that organizes Angular modules\n- `BrowserModule` — Required for running Angular in the browser",        
+        "solution": "### 🚀 Angular App Bootstrapping Flow\n\n#### 1️⃣ `main.ts` — The Starting Point\n```ts\nplatformBrowserDynamic().bootstrapModule(AppModule)\n  .catch(err => console.error(err));\n```\n- This file is the true entry point and kicks off the app by bootstrapping the root module.\n\n#### 2️⃣ `app.module.ts` — The Root Module\n```ts\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```\n- Declares the top-level components\n- Imports other modules like BrowserModule\n- Specifies which component to render first via `bootstrap`\n\n#### 3️⃣ `app.component.ts` — The Root Component\n```ts\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {}\n```\n- Contains core template logic\n- Serves as the host view that Angular replaces into `index.html`\n\n#### 4️⃣ `index.html` — Static Shell\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <title>Angular App</title>\n</head>\n<body>\n  <app-root></app-root>\n</body>\n</html>\n```\n- The first file served by the browser\n- `<app-root>` is replaced by `AppComponent`\n\n### 📁 Execution Order Summary\n| Step | File               | Role                                               |\n|------|--------------------|----------------------------------------------------|\n| 1    | `main.ts`          | Bootstraps `AppModule`                            |\n| 2    | `app.module.ts`    | Declares components, imports modules              |\n| 3    | `app.component.ts` | First visual component loaded                     |\n| 4    | `index.html`       | Static container holding `<app-root>`            |\n\n### 🛠 Other Key Concepts\n- `angular.json` — CLI config for build, serve, and file paths\n- `environment.ts` — Environment-specific settings\n- `AppRoutingModule` — Declares and routes paths\n- `@NgModule` — Decorator that organizes Angular modules\n- `BrowserModule` — Required for running Angular in the browser",
         "images": ["assets/images/day1/ng-day-1-1.png", "assets/images/day1/ng-day-1-2.png", "assets/images/day1/ng-day-1-3.png","assets/images/day1/ng-day-1-4.png"],
         "interviewQuestions": [
           {
@@ -995,7 +995,7 @@
     },
     {
       "title": "Angular",
-      "topic": "Interpolation & Binding",      
+      "topic": "Interpolation & Binding",
       "summaryv": "<h3 style=\"color:#f59e0b;\">⚡ Binding Types in Angular</h3>\n<ul style=\"list-style:none; padding-left:0;\">\n<li style=\"margin-bottom:10px;\">\n        <span style=\"color:#10b981;\">✔️ <strong>Interpolation</strong> (<code>{{ value }}</code>)</span> – Inserts dynamic values from the component into the template as plain text.\n      </li>\n</ul>",
       "summary": "<div style=\"font-family:Segoe UI, sans-serif; line-height:1.6; font-size:16px;\">\n  <h3 style=\"color:#0a6ebd;\">⚙️ Angular Template Binding Overview.</h3>\n  <p>Angular provides <strong>interpolation</strong> (<code>{{ }}</code>) and <strong>binding mechanisms</strong> (<code>[]</code>, <code>()</code>, <code>[()]</code>) to connect templates with component logic. This is core to Angular’s reactive UI.</p>\n\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#06815e;\"><strong>Interpolation</strong> (<code>{{ }}</code>)</span> – Inserts dynamic values from the component into the template as plain text.\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#0a6ebd;\"><strong>Property Binding</strong> (<code>[property]</code>)</span> – Binds a DOM property to a component variable. Example: <code>&lt;img [src]=\"imageUrl\"&gt;</code>\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#c05621;\"><strong>Event Binding</strong> (<code>(event)</code>)</span> – Listens for and responds to user events like clicks. Example: <code>&lt;button (click)=\"handleClick()\"&gt;</code>\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#7c3aed;\"><strong>Two-Way Binding</strong> (<code>[(ngModel)]</code>)</span> – Combines property and event binding to keep data in sync between the component and the template. Example: <code>&lt;input [(ngModel)]=\"username\"&gt;</code>\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#444444;\">These binding types enable dynamic, interactive applications by connecting the UI with underlying data and logic.</span>\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#444444;\">Understanding and using these bindings effectively is crucial for building robust Angular applications.</span>\n    </li>\n  </ul>\n</div>",
       "solution": "### ✍️ Interpolation\n```html\n<h1>{{ title }}</h1>\n<p>{{ user.name }}</p>\n```\n\n### ✍️ Property Binding\n```html\n<img [src]=\"imageUrl\" alt=\"User Image\">\n```\n\n### ✍️ Event Binding\n```html\n<button (click)=\"sayHello()\">Click</button>\n```\n\n### ✍️ Two-way Binding\n```html\n<input [(ngModel)]=\"username\">\n<p>Hello, {{ username }}</p>\n```\n\n### ⚡ Binding Types\n- Interpolation → `{{ value }} ` – Inserts dynamic values from the component.\n- Property binding → `[property]` - Binds DOM properties to component variables>\n- Event binding → `(event)` - Listens for and responds to user events. Example: `<button (click)=handleClick()>`\n- Two-way binding → `[()]` - Syncs data between the component and the view. Example: `<input [(ngModel)]=username>`\n Class Binding → `[class.className]` – Dynamically adds or removes CSS classes. Example: `<div [class.active]=isActive>`\n- Style Binding → `[style.styleName]` – Dynamically sets inline styles. Example: `<div [style.color]=textColor>`\n\n### Best Practices\n- Use interpolation for simple text display\n- Use property binding for DOM properties\n- Use event binding for user interactions\n- Use two-way binding for form inputs./n  Class Binding → `[class.className]` – Dynamically adds or removes CSS classes. Example: `<div [class.active]=isActive>`\n- Style Binding → `[style.styleName]` – Dynamically sets inline styles. Example: `<div [style.color]=textColor>`\n\n### Best Practices\n- Use interpolation for simple text display\n- Use property binding for DOM properties\n- Use event binding for user interactions\n- Use two-way binding for form inputs.\n- Attribute Binding → `[attr.attribute]` – Sets HTML attributes dynamically. Example: `<input [attr.aria-label]=label>`",
@@ -1057,82 +1057,300 @@
 },
 {
   "day": 4,
-  "sections":[
-      {
-        "title": "Angular",
-        "topic": "NgModule and Its Properties",
-        "summaryv": "<h3 style=\"color:#f59e0b;\">📦 Understanding NgModule in Angular</h3>\n<ul style=\"list-style:none; padding-left:0;\">\n  <li style=\"margin-bottom:10px;\">\n    <span style=\"color:#10b981;\">✔️ <strong>NgModule</strong></span> is a decorator that defines a container for a cohesive block of functionality — components, directives, pipes, and services that belong together.\n  </li>\n</ul>",
-        "summary": "<div style=\"font-family:Segoe UI, sans-serif; line-height:1.6; font-size:16px;\">\n  <h3 style=\"color:#0a6ebd;\">⚙️ What is an NgModule?</h3>\n  <p>An <strong>NgModule</strong> is a TypeScript class annotated with the <code>@NgModule</code> decorator. It provides metadata that tells Angular how to compile and launch the application. Every Angular app has at least one root module (<code>AppModule</code>).</p>\n\n  <h4 style=\"color:#f59e0b;\">🧱 Why Use NgModule?</h4>\n  <p>It organizes your app into cohesive blocks, supports lazy loading, and manages the dependency injection scope of services.</p>\n\n  <h3 style=\"color:#0a6ebd;\">📋 Key Properties of @NgModule</h3>\n  <table  style=\"width:100%; border-collapse:collapse; font-size:15px;\">\n    <thead>\n      <tr style=\"background-color:#0a6ebd; color:white;\">\n        <th style=\"padding:8px; border:1px solid #ddd; text-align:left;\">Property</th>\n        <th style=\"padding:8px; border:1px solid #ddd; text-align:left;\">Description</th>\n        <th style=\"padding:8px; border:1px solid #ddd; text-align:left;\">Example</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td style=\"padding:8px; border:1px solid #ddd; color:#10b981;\"><strong>declarations</strong></td>\n        <td style=\"padding:8px; border:1px solid #ddd;\">Defines components, directives, and pipes that belong to this module. These are private unless exported.</td>\n        <td style=\"padding:8px; border:1px solid #ddd;\"><code>declarations: [AppComponent, HeaderComponent]</code></td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px; border:1px solid #ddd; color:#0ea5e9;\"><strong>imports</strong></td>\n        <td style=\"padding:8px; border:1px solid #ddd;\">Imports other modules whose exported classes are needed by component templates in this module.</td>\n        <td style=\"padding:8px; border:1px solid #ddd;\"><code>imports: [BrowserModule, FormsModule]</code></td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px; border:1px solid #ddd; color:#f59e0b;\"><strong>exports</strong></td>\n        <td style=\"padding:8px; border:1px solid #ddd;\">Makes declared components, directives, or pipes available to other modules.</td>\n        <td style=\"padding:8px; border:1px solid #ddd;\"><code>exports: [HeaderComponent]</code></td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px; border:1px solid #ddd; color:#7c3aed;\"><strong>providers</strong></td>\n        <td style=\"padding:8px; border:1px solid #ddd;\">Registers services and makes them available through dependency injection within the module.</td>\n        <td style=\"padding:8px; border:1px solid #ddd;\"><code>providers: [UserService]</code></td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px; border:1px solid #ddd; color:#ec4899;\"><strong>bootstrap</strong></td>\n        <td style=\"padding:8px; border:1px solid #ddd;\">Lists the root component(s) to be bootstrapped when the app starts. Used only in <code>AppModule</code>.</td>\n        <td style=\"padding:8px; border:1px solid #ddd;\"><code>bootstrap: [AppComponent]</code></td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px; border:1px solid #ddd; color:#14b8a6;\"><strong>schemas</strong></td>\n        <td style=\"padding:8px; border:1px solid #ddd;\">Specifies custom elements or non-Angular elements allowed in templates (e.g., <code>CUSTOM_ELEMENTS_SCHEMA</code>).</td>\n        <td style=\"padding:8px; border:1px solid #ddd;\"><code>schemas: [CUSTOM_ELEMENTS_SCHEMA]</code></td>\n      </tr>\n    </tbody>\n  </table>\n\n  <p style=\"margin-top:10px; color:#555;\">Each of these properties plays a specific role in defining how your Angular application is structured and how it interacts with other modules and services.</p>\n</div>",
-        "solution": "### 🧩 Example NgModule\n```typescript\nimport { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { FormsModule } from '@angular/forms';\n\nimport { AppComponent } from './app.component';\nimport { HeaderComponent } from './header/header.component';\nimport { UserService } from './services/user.service';\n\n@NgModule({\n  declarations: [AppComponent, HeaderComponent], // components, directives, pipes\n  imports: [BrowserModule, FormsModule],         // external Angular modules\n  exports: [HeaderComponent],                   // exported for other modules\n  providers: [UserService],                     // services registered here\n  bootstrap: [AppComponent],                    // root component\n  schemas: []                                   // custom element schemas if any\n})\nexport class AppModule {}\n```\n\n### ⚙️ Explanation of Properties\n- **declarations** → Registers local components, directives, and pipes.\n- **imports** → Imports features from other modules (BrowserModule, FormsModule, etc.).\n- **exports** → Exposes selected declarations for use in other modules.\n- **providers** → Registers dependency injection services.\n- **bootstrap** → Defines which component starts the app (root only).\n- **schemas** → Allows use of custom elements or attributes.\n\n### 🧱 Types of Angular Modules\n- **Root Module** → Main entry point (AppModule)\n- **Feature Module** → Organizes specific features (e.g., UserModule)\n- **Shared Module** → Common reusable components, pipes, directives\n- **Core Module** → Singleton services, app-level utilities\n\n### 🧠 Best Practices\n- Keep <code>AppModule</code> lightweight.\n- Import <code>SharedModule</code> in feature modules for common utilities.\n- Use <code>CoreModule</code> for single-instance services.\n- Export only what is necessary for other modules.\n- Avoid circular dependencies between modules.",
-        "images": [
-          "assets/images/day4/ngmodule-structure.png"
-        ],
-        "interviewQuestions": [
-          {
-            "question": "What is an NgModule in Angular?",
-            "answer": "An NgModule is a class decorated with @NgModule that defines a container for a cohesive block of functionality in an Angular app.",
-            "showAnswer": false
-          },
-          {
-            "question": "What does the declarations property in NgModule do?",
-            "answer": "It declares the components, directives, and pipes that belong to the module.",
-            "showAnswer": false
-          },
-          {
-            "question": "When should you use the bootstrap property in NgModule?",
-            "answer": "Only in the root module (AppModule) to specify the root component that Angular should load when starting the application.",
-            "showAnswer": false
-          },
-          {
-            "question": "What is the difference between imports and exports in NgModule?",
-            "answer": "Imports bring functionality from other modules into this one, while exports make components/directives/pipes available to other modules.",
-            "showAnswer": false
-          }
-        ],
-        "challenge": "Create a new feature module named `ProductModule` that declares a `ProductListComponent`, imports `CommonModule`, and exports `ProductListComponent` so it can be used in `AppModule`.",
-        "quiz": [
-          {
-            "question": "Which decorator is used to define a module in Angular?",
-            "options": [
-              "@Component",
-              "@Directive",
-              "@NgModule",
-              "@Injectable"
-            ],
-            "answer": "@NgModule"
-          },
-          {
-            "question": "What type of items can be declared inside the `declarations` array?",
-            "options": [
-              "Services",
-              "Components, Directives, Pipes",
-              "Modules",
-              "Guards"
-            ],
-            "answer": "Components, Directives, Pipes"
-          },
-          {
-            "question": "Which property is used to import other Angular modules?",
-            "options": [
-              "imports",
-              "providers",
-              "exports",
-              "bootstrap"
-            ],
-            "answer": "imports"
-          },
-          {
-            "question": "Which NgModule property is used only in the root module?",
-            "options": [
-              "bootstrap",
-              "providers",
-              "exports",
-              "schemas"
-            ],
-            "answer": "bootstrap"
-          }
-        ]
-      }
+  "sections": [
+    {
+      "title": "HTML",
+      "topic": "HTML5 APIs",
+      "summary": "🚀 HTML5 introduced powerful browser APIs that allow developers to build modern web applications without external plugins. These APIs support features like geolocation, local storage, drag & drop, multimedia, and more.",
+      "solution": "### ✍️ Geolocation API Example\n```html\n<button onclick=\"getLocation()\">Get Location</button>\n<p id=\"demo\"></p>\n\n<script>\nfunction getLocation() {\n  if (navigator.geolocation) {\n    navigator.geolocation.getCurrentPosition(showPosition);\n  } else {\n    document.getElementById(\"demo\").innerHTML = \"Geolocation not supported.\";\n  }\n}\n\nfunction showPosition(position) {\n  document.getElementById(\"demo\").innerHTML =\n    \"Latitude: \" + position.coords.latitude +\n    \"<br>Longitude: \" + position.coords.longitude;\n}\n</script>\n```\n\n### ✍️ Local Storage Example\n```js\nlocalStorage.setItem(\"username\", \"Rajesh\");\n\nconst user = localStorage.getItem(\"username\");\nconsole.log(user);\n\nlocalStorage.removeItem(\"username\");\n```\n\n### 🔑 Popular HTML5 APIs\n- Geolocation API\n- Local Storage API\n- Drag and Drop API\n- Web Workers API\n- Audio & Video API\n- Canvas API\n\n### ⚡ Best Practices\n- Always ask user permission for geolocation\n- Use localStorage only for non-sensitive data\n- Handle API support with feature detection",
+      "images": [
+        "assets/images/day4/html5-apis.png"
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What does the Geolocation API do?",
+          "answer": "It allows websites to access the user’s geographical location.",
+          "showAnswer": false
+        },
+        {
+          "question": "What is the difference between localStorage and sessionStorage?",
+          "answer": "localStorage persists data permanently, sessionStorage clears when the tab closes.",
+          "showAnswer": false
+        },
+        {
+          "question": "How do you check browser API support?",
+          "answer": "Use feature detection like `if (navigator.geolocation)`.",
+          "showAnswer": false
+        }
+      ],
+      "challenge": "Create a page that stores a username in localStorage and displays it after page refresh.",
+      "quiz": [
+        {
+          "question": "Which API stores data permanently in the browser?",
+          "options": [
+            "sessionStorage",
+            "cookies",
+            "localStorage",
+            "cacheAPI"
+          ],
+          "answer": "localStorage"
+        },
+        {
+          "question": "Which object is used for geolocation?",
+          "options": [
+            "window.geo",
+            "navigator.geolocation",
+            "document.location",
+            "browser.geo"
+          ],
+          "answer": "navigator.geolocation"
+        },
+        {
+          "question": "Which HTML5 API enables drag functionality?",
+          "options": [
+            "Canvas API",
+            "Storage API",
+            "Drag and Drop API",
+            "Media API"
+          ],
+          "answer": "Drag and Drop API"
+        }
+      ]
+    },
+    {
+      "title": "CSS",
+      "topic": "Display & Visibility",
+      "summary": "🎨 Learn how CSS controls the rendering and visibility of elements using properties like `display`, `visibility`, and `opacity`. These properties help manage layouts and UI behavior effectively.",
+      "solution": "### ✍️ Display Property\n```css\n.block {\n  display: block;\n}\n\n.inline {\n  display: inline;\n}\n\n.inline-block {\n  display: inline-block;\n}\n\n.hidden {\n  display: none;\n}\n```\n\n### ✍️ Visibility Example\n```css\n.invisible {\n  visibility: hidden;\n}\n```\n\n### ✍️ Opacity Example\n```css\n.fade {\n  opacity: 0.5;\n}\n```\n\n### 🔑 Key Differences\n- `display: none` → removes element completely from layout\n- `visibility: hidden` → hides element but keeps layout space\n- `opacity: 0` → element becomes transparent but still clickable\n\n### ⚡ Best Practices\n- Use `display: none` for conditional rendering\n- Use `visibility` for maintaining layout structure\n- Use `opacity` with transitions for animations",
+      "images": [
+        "assets/images/day4/css-display-visibility.png"
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What is the difference between `display:none` and `visibility:hidden`?",
+          "answer": "`display:none` removes the element from layout, while `visibility:hidden` keeps its space.",
+          "showAnswer": false
+        },
+        {
+          "question": "What does `inline-block` do?",
+          "answer": "It allows elements to sit inline while supporting width and height.",
+          "showAnswer": false
+        },
+        {
+          "question": "Does `opacity:0` remove click events?",
+          "answer": "No, the element is still interactive unless pointer events are disabled.",
+          "showAnswer": false
+        }
+      ],
+      "challenge": "Create three boxes demonstrating `display:none`, `visibility:hidden`, and `opacity:0`.",
+      "quiz": [
+        {
+          "question": "Which property removes an element from the document flow?",
+          "options": [
+            "visibility:hidden",
+            "opacity:0",
+            "display:none",
+            "hidden:true"
+          ],
+          "answer": "display:none"
+        },
+        {
+          "question": "Which display type allows width and height while staying inline?",
+          "options": [
+            "inline",
+            "block",
+            "inline-block",
+            "flex"
+          ],
+          "answer": "inline-block"
+        },
+        {
+          "question": "Which property keeps the layout space reserved?",
+          "options": [
+            "display:none",
+            "visibility:hidden",
+            "opacity:0",
+            "remove:true"
+          ],
+          "answer": "visibility:hidden"
+        }
+      ]
+    },
+    {
+      "title": "JavaScript",
+      "topic": "Array Methods",
+      "summary": "📚 JavaScript array methods make data manipulation easy and powerful. Methods like `map`, `filter`, `find`, and `reduce` are commonly used in modern applications.",
+      "solution": "### ✍️ Common Array Methods\n```js\nconst numbers = [1, 2, 3, 4, 5];\n\n// map\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doubled);\n\n// filter\nconst even = numbers.filter(num => num % 2 === 0);\nconsole.log(even);\n\n// find\nconst found = numbers.find(num => num > 3);\nconsole.log(found);\n\n// reduce\nconst total = numbers.reduce((sum, num) => sum + num, 0);\nconsole.log(total);\n```\n\n### 🔑 Important Methods\n- `map()` → transforms array\n- `filter()` → filters items\n- `find()` → returns first match\n- `reduce()` → accumulates values\n- `forEach()` → loops through items\n- `some()` / `every()` → condition checking\n\n### ⚡ Best Practices\n- Prefer array methods over traditional loops in modern JS\n- Use immutable patterns when possible\n- Chain methods carefully for readability",
+      "images": [
+        "assets/images/day4/js-array-methods.png"
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What does `map()` return?",
+          "answer": "A new transformed array.",
+          "showAnswer": false
+        },
+        {
+          "question": "What is the purpose of `reduce()`?",
+          "answer": "It reduces an array into a single value.",
+          "showAnswer": false
+        },
+        {
+          "question": "What’s the difference between `find()` and `filter()`?",
+          "answer": "`find()` returns the first match, `filter()` returns all matches.",
+          "showAnswer": false
+        }
+      ],
+      "challenge": "Create an array of products and use `filter()` to show only products with price greater than 1000.",
+      "quiz": [
+        {
+          "question": "Which method transforms array items?",
+          "options": [
+            "map",
+            "find",
+            "reduce",
+            "some"
+          ],
+          "answer": "map"
+        },
+        {
+          "question": "Which method returns a single accumulated value?",
+          "options": [
+            "filter",
+            "reduce",
+            "find",
+            "map"
+          ],
+          "answer": "reduce"
+        },
+        {
+          "question": "Which method checks if at least one item matches?",
+          "options": [
+            "every",
+            "map",
+            "some",
+            "filter"
+          ],
+          "answer": "some"
+        }
+      ]
+    },
+    {
+      "title": "TypeScript",
+      "topic": "Type Assertion",
+      "summary": "🔒 Type Assertion in TypeScript tells the compiler about the specific type of a variable. It helps developers work with DOM elements and unknown values safely.",
+      "solution": "### ✍️ Basic Type Assertion\n```ts\nlet value: unknown = \"Hello TypeScript\";\n\nlet strLength: number = (value as string).length;\nconsole.log(strLength);\n```\n\n### ✍️ Angle Bracket Syntax\n```ts\nlet message: any = \"Welcome\";\nlet len: number = (<string>message).length;\n```\n\n### ✍️ DOM Example\n```ts\nconst input = document.getElementById(\"username\") as HTMLInputElement;\nconsole.log(input.value);\n```\n\n### 🔑 Notes\n- Type assertions do not change runtime behavior\n- Used only by TypeScript compiler\n- Helpful for DOM manipulation\n\n### ⚡ Best Practices\n- Prefer `as` syntax in React/Angular projects\n- Avoid excessive assertions\n- Use proper typing whenever possible",
+      "images": [
+        "assets/images/day4/ts-type-assertion.png"
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What is type assertion?",
+          "answer": "It tells TypeScript the specific type of a value.",
+          "showAnswer": false
+        },
+        {
+          "question": "Does type assertion affect runtime?",
+          "answer": "No, it only affects compile-time checking.",
+          "showAnswer": false
+        },
+        {
+          "question": "Which syntax is preferred in modern TypeScript?",
+          "answer": "The `as` syntax.",
+          "showAnswer": false
+        }
+      ],
+      "challenge": "Select an input element using `getElementById` and access its value using type assertion.",
+      "quiz": [
+        {
+          "question": "Which keyword is commonly used for type assertion?",
+          "options": [
+            "type",
+            "assert",
+            "as",
+            "cast"
+          ],
+          "answer": "as"
+        },
+        {
+          "question": "What type is commonly asserted for input elements?",
+          "options": [
+            "HTMLElement",
+            "HTMLDivElement",
+            "HTMLInputElement",
+            "NodeElement"
+          ],
+          "answer": "HTMLInputElement"
+        },
+        {
+          "question": "Does TypeScript type assertion change JavaScript output?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "answer": "No"
+        }
+      ]
+    },
+    {
+      "title": "Angular",
+      "topic": "NgModule Basics",
+      "summary": "<div style=\"font-family:Segoe UI, sans-serif; line-height:1.6; font-size:16px;\">\n  <h3 style=\"color:#dd0031;\">⚙️ Angular NgModule Basics</h3>\n  <p><strong>NgModule</strong> is a core Angular feature used to organize components, directives, pipes, and services into cohesive blocks of functionality.</p>\n\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#0a6ebd;\"><strong>Declarations</strong></span> – Components, directives, and pipes that belong to the module.\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#06815e;\"><strong>Imports</strong></span> – Other Angular modules required by this module.\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#c05621;\"><strong>Providers</strong></span> – Services available for dependency injection.\n    </li>\n    <li style=\"margin-bottom:10px;\">\n      <span style=\"color:#7c3aed;\"><strong>Bootstrap</strong></span> – Root component loaded during app startup.\n    </li>\n  </ul>\n</div>",
+      "solution": "### ✍️ Basic NgModule Example\n```ts\nimport { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule {}\n```\n\n### 🔑 NgModule Properties\n- `declarations` → Components, directives, pipes\n- `imports` → External modules needed\n- `providers` → Services for DI\n- `bootstrap` → Starting/root component\n- `exports` → Shares components with other modules\n\n### ✍️ Feature Module Example\n```ts\n@NgModule({\n  declarations: [UserComponent],\n  imports: [CommonModule],\n  exports: [UserComponent]\n})\nexport class UserModule {}\n```\n\n### ⚡ Best Practices\n- Keep feature modules focused\n- Use shared modules for reusable components\n- Lazy load large modules for performance",
+      "images": [
+        "assets/images/day4/ngmodule-basics.png"
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What is the purpose of NgModule?",
+          "answer": "It organizes Angular application features into cohesive blocks.",
+          "showAnswer": false
+        },
+        {
+          "question": "What goes inside `declarations`?",
+          "answer": "Components, directives, and pipes.",
+          "showAnswer": false
+        },
+        {
+          "question": "What is the role of `bootstrap`?",
+          "answer": "It defines the root component loaded during startup.",
+          "showAnswer": false
+        }
+      ],
+      "challenge": "Create a feature module called `ProductModule` and declare a `ProductListComponent` inside it.",
+      "quiz": [
+        {
+          "question": "Which property registers components in a module?",
+          "options": [
+            "imports",
+            "providers",
+            "declarations",
+            "bootstrap"
+          ],
+          "answer": "declarations"
+        },
+        {
+          "question": "Which module is required for browser apps?",
+          "options": [
+            "FormsModule",
+            "BrowserModule",
+            "HttpClientModule",
+            "CommonModule"
+          ],
+          "answer": "BrowserModule"
+        },
+        {
+          "question": "What does `providers` contain?",
+          "options": [
+            "Components",
+            "Styles",
+            "Services",
+            "Templates"
+          ],
+          "answer": "Services"
+        }
+      ]
+    }
   ]
 },
 {
@@ -1194,6 +1412,70 @@
             "To start the application"
           ],
           "answer": "To group related functionality"
+        }
+      ]
+    }
+  ]
+},
+{
+  "day": 6,
+  "sections": [
+    {
+      "title": "Angular",
+      "topic": "Components, Directives & Pipes – Relationship and Usage",
+      "summary": "<div style=\"font-family:Segoe UI, sans-serif; line-height:1.6; font-size:16px;\">\n  <h3 style=\"color:#0a6ebd;\">🧩 Angular Components, Directives & Pipes – Relationship and Usage</h3>\n  <p>Angular applications are built using three fundamental building blocks — <strong>Components</strong>, <strong>Directives</strong>, and <strong>Pipes</strong>. Each serves a unique purpose but they work together to create dynamic, interactive, and maintainable applications.</p>\n  <h4 style=\"color:#0a6ebd;\">1️⃣ Components</h4>\n  <p>A <strong>Component</strong> is the basic building block of an Angular app. It defines the structure, style, and behavior of a portion of the UI. Components are essentially special types of directives that have their own template and logic.</p>\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li><strong>Selector:</strong> Defines the custom HTML tag used to render the component.</li>\n    <li><strong>Template / TemplateUrl:</strong> Defines the view structure (HTML).</li>\n    <li><strong>StyleUrls / Styles:</strong> Defines CSS for the component.</li>\n    <li><strong>Class:</strong> Contains business logic and data binding logic.</li>\n  </ul>\n\n  <h4 style=\"color:#0a6ebd;\">2️⃣ Directives</h4>\n  <p><strong>Directives</strong> are classes that add behavior to elements or manipulate the DOM. Components themselves are directives with templates. Directives teach HTML new behaviors.</p>\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li><span style=\"color:#10b981;\">✔️ <strong>Structural Directives</strong></span> – Change DOM structure (e.g., <code>*ngIf</code>, <code>*ngFor</code>).</li>\n    <li><span style=\"color:#f59e0b;\">✔️ <strong>Attribute Directives</strong></span> – Change element appearance or behavior (e.g., <code>[ngClass]</code>, <code>[ngStyle]</code>).</li>\n    <li><span style=\"color:#3b82f6;\">✔️ <strong>Component Directives</strong></span> – Directives with a template (every component is one).</li>\n  </ul>\n\n  <h4 style=\"color:#0a6ebd;\">3️⃣ Pipes</h4>\n  <p><strong>Pipes</strong> transform data before it’s displayed in the template. They make data presentation clean and reusable.</p>\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li><strong>Built-in Pipes:</strong> <code>date</code>, <code>uppercase</code>, <code>currency</code>, <code>percent</code>, <code>json</code></li>\n    <li><strong>Custom Pipes:</strong> Can be created using <code>@Pipe</code> decorator to handle specific formatting needs.</li>\n  </ul>\n\n  <h4 style=\"color:#0a6ebd;\">🔗 Relationship</h4>\n  <p><strong>Components</strong> define UI structure, <strong>Directives</strong> modify DOM behavior or styling, and <strong>Pipes</strong> format data. Together, they enable a powerful and flexible UI architecture.</p>\n</div>",
+      "solution": "### ✨ Angular Components\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-user',\n  templateUrl: './user.component.html',\n  styleUrls: ['./user.component.css']\n})\nexport class UserComponent {\n  name = 'Rajesh Roy';\n  greet() {\n    return `Hello, ${this.name}!`;\n  }\n}\n```\n\n### ✨ Angular Directives\n**Structural Directive Example:**\n```html\n<div *ngIf=\"isLoggedIn\">Welcome back!</div>\n<li *ngFor=\"let user of users\">{{ user.name }}</li>\n```\n\n**Attribute Directive Example:**\n```typescript\n@Directive({ selector: '[appHighlight]' })\nexport class HighlightDirective {\n  constructor(private el: ElementRef) {\n    el.nativeElement.style.backgroundColor = 'yellow';\n  }\n}\n```\n\n### ✨ Angular Pipes\n**Custom Pipe Example:**\n```typescript\nimport { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({ name: 'titlecase' })\nexport class TitleCasePipe implements PipeTransform {\n  transform(value: string): string {\n    return value.split(' ')\n      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n      .join(' ');\n  }\n}\n```\n\n**Usage:**\n```html\n<p>{{ 'angular components and directives' | titlecase }}</p>\n```\n\n### 💡 Using All Together\n```html\n<div *ngIf=\"users.length > 0\">\n  <p [appHighlight]>User List:</p>\n  <ul>\n    <li *ngFor=\"let user of users\">\n      {{ user.name | titlecase }} — Joined on {{ user.joinDate | date:'longDate' }}\n    </li>\n  </ul>\n</div>\n```\n\n### 🧠 Relationship Table\n| Element | Role | Interaction |\n|----------|------|-------------|\n| **Component** | Defines view and logic | Uses directives and pipes in its template |\n| **Directive** | Modifies DOM or behavior | Used inside component templates |\n| **Pipe** | Transforms data for display | Used inside component bindings or interpolation |",
+      "images": [
+        "assets/images/day4/ng-components-directives-pipes.png"
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What is a component in Angular?",
+          "answer": "A component controls a portion of the UI (view) and consists of an HTML template, CSS styles, and TypeScript logic.",
+          "showAnswer": false
+        },
+        {
+          "question": "What are the types of directives in Angular?",
+          "answer": "There are three types — Component Directives, Structural Directives (e.g. *ngIf, *ngFor), and Attribute Directives (e.g. [ngStyle], [ngClass]).",
+          "showAnswer": false
+        },
+        {
+          "question": "What is the purpose of pipes in Angular?",
+          "answer": "Pipes transform or format data in templates, e.g., converting text to uppercase or formatting dates and currency.",
+          "showAnswer": false
+        }
+      ],
+      "challenge": "Create a custom directive that highlights text on hover, and a custom pipe that converts a sentence to title case. Use both inside a component template.",
+      "quiz": [
+        {
+          "question": "Which decorator is used to define a component?",
+          "options": [
+            "@Directive",
+            "@Pipe",
+            "@Component",
+            "@NgModule"
+          ],
+          "answer": "@Component"
+        },
+        {
+          "question": "Which directive type changes the DOM structure?",
+          "options": [
+            "Attribute",
+            "Structural",
+            "Component",
+            "Template"
+          ],
+          "answer": "Structural"
+        },
+        {
+          "question": "What does a pipe do in Angular?",
+          "options": [
+            "Handles events",
+            "Transforms data",
+            "Fetches API",
+            "Binds components"
+          ],
+          "answer": "Transforms data"
         }
       ]
     }
