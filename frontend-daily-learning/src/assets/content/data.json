@@ -1357,61 +1357,212 @@
   "day": 5,
   "sections": [
     {
-      "title": "Angular",
-      "topic": "Types of Angular Modules",
-      "summary": "<div style='font-family:Segoe UI, sans-serif; line-height:1.6; font-size:16px;'>\n  <h3 style='color:#0a6ebd;'>📦 Understanding Types of Modules in Angular</h3>\n  <p>In Angular, modules help organize your application into smaller, maintainable, and reusable parts. Each type of module serves a specific purpose in structuring and optimizing your application.</p>\n\n  <h4 style='color:#16a34a;'>🧩 Core Concept</h4>\n  <p>Every Angular application must have at least one root module — <code>AppModule</code> — but large applications are often divided into multiple feature, shared, and core modules for scalability and reusability.</p>\n\n  <table style='width:100%; border-collapse:collapse; border:1px solid #ccc; margin-top:10px;'>\n    <thead style='background:#e0f2fe;'>\n      <tr>\n        <th style='border:1px solid #ccc; padding:8px;'>Module Type</th>\n        <th style='border:1px solid #ccc; padding:8px;'>Description</th>\n        <th style='border:1px solid #ccc; padding:8px;'>Example</th>\n        <th style='border:1px solid #ccc; padding:8px;'>Purpose 💡</th>\n      </tr>\n    </thead>\n    <tbody>\n\n      <tr>\n        <td style='border:1px solid #ccc; padding:8px;'><strong>Root Module</strong></td>\n        <td style='border:1px solid #ccc; padding:8px;'>The main entry point of the application. Bootstraps the root component and loads other modules.</td>\n        <td style='border:1px solid #ccc; padding:8px;'><code>AppModule</code></td>\n        <td style='border:1px solid #ccc; padding:8px;'>🚀 Starts the Angular app; defined in <code>main.ts</code>.</td>\n      </tr>\n\n      <tr>\n        <td style='border:1px solid #ccc; padding:8px;'><strong>Feature Module</strong></td>\n        <td style='border:1px solid #ccc; padding:8px;'>Encapsulates functionality for a specific application area or feature.</td>\n        <td style='border:1px solid #ccc; padding:8px;'><code>UserModule, ProductModule</code></td>\n        <td style='border:1px solid #ccc; padding:8px;'>🧱 Organizes related components, services, and routes into one unit.</td>\n      </tr>\n\n      <tr>\n        <td style='border:1px solid #ccc; padding:8px;'><strong>Shared Module</strong></td>\n        <td style='border:1px solid #ccc; padding:8px;'>Contains reusable components, directives, and pipes that can be used across multiple modules.</td>\n        <td style='border:1px solid #ccc; padding:8px;'><code>SharedModule</code></td>\n        <td style='border:1px solid #ccc; padding:8px;'>📦 Promotes code reusability and reduces duplication.</td>\n      </tr>\n\n      <tr>\n        <td style='border:1px solid #ccc; padding:8px;'><strong>Core Module</strong></td>\n        <td style='border:1px solid #ccc; padding:8px;'>Holds singleton services and core application features that should only be loaded once (e.g., authentication, logging).</td>\n        <td style='border:1px solid #ccc; padding:8px;'><code>CoreModule</code></td>\n        <td style='border:1px solid #ccc; padding:8px;'>🧠 Prevents re-instantiation of global services; imported only in <code>AppModule</code>.</td>\n      </tr>\n\n      <tr>\n        <td style='border:1px solid #ccc; padding:8px;'><strong>Routing Module</strong></td>\n        <td style='border:1px solid #ccc; padding:8px;'>Defines the route configuration for a specific module or feature area.</td>\n        <td style='border:1px solid #ccc; padding:8px;'><code>AppRoutingModule, UserRoutingModule</code></td>\n        <td style='border:1px solid #ccc; padding:8px;'>🗺️ Keeps routing logic separate for clarity and maintainability.</td>\n      </tr>\n\n    </tbody>\n  </table>\n\n  <h4 style='color:#0ea5e9; margin-top:15px;'>📘 Key Takeaways</h4>\n  <ul>\n    <li><strong>Root Module</strong> – Starts the app.</li>\n    <li><strong>Feature Modules</strong> – Group app functionalities.</li>\n    <li><strong>Shared Module</strong> – Reusable UI logic (pipes, directives, components).</li>\n    <li><strong>Core Module</strong> – Singleton services (loaded once).</li>\n    <li><strong>Routing Modules</strong> – Keep navigation separate and clean.</li>\n  </ul>\n</div>",
-      "solution": "### 🧱 Example: Feature & Shared Modules\n```typescript\n// feature/user.module.ts\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UserListComponent } from './user-list/user-list.component';\nimport { UserDetailComponent } from './user-detail/user-detail.component';\n\n@NgModule({\n  declarations: [UserListComponent, UserDetailComponent],\n  imports: [CommonModule],\n  exports: [UserListComponent]\n})\nexport class UserModule {}\n```\n\n```typescript\n// shared/shared.module.ts\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HighlightDirective } from './directives/highlight.directive';\nimport { CapitalizePipe } from './pipes/capitalize.pipe';\n\n@NgModule({\n  declarations: [HighlightDirective, CapitalizePipe],\n  imports: [CommonModule],\n  exports: [HighlightDirective, CapitalizePipe, CommonModule]\n})\nexport class SharedModule {}\n```\n\n```typescript\n// core/core.module.ts\nimport { NgModule, Optional, SkipSelf } from '@angular/core';\nimport { AuthService } from './services/auth.service';\n\n@NgModule({\n  providers: [AuthService]\n})\nexport class CoreModule {\n  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {\n    if (parentModule) {\n      throw new Error('CoreModule is already loaded. Import it in AppModule only.');\n    }\n  }\n}\n```\n\n### 💡 Best Practices\n- Import `CoreModule` only once in `AppModule`.\n- Never import `SharedModule` into `CoreModule`.\n- Keep routing separate by creating a dedicated `RoutingModule` for each feature.\n- Avoid circular dependencies between feature modules.\n- Lazy-load feature modules where possible to improve performance.",
-      "images": [
-        "assets/images/day5/angular-module-types.png"
+      "title": "HTML",
+      "topic": "Lists & Tables",
+      "summary": "Definition: Lists are used to group related items, while tables organize data into rows and columns.\n✔️ Lists → &lt;ul&gt; for unordered, &lt;ol&gt; for ordered.\n✔️ Tables → &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt; for structured tabular data.\n✔️ Accessibility → Use &lt;caption&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt; for clarity.",
+      "solution": "### 📋 Lists\n```html\n<ul>\n  <li>Apple</li>\n  <li>Banana</li>\n</ul>\n<ol>\n  <li>Step 1</li>\n  <li>Step 2</li>\n</ol>\n```\n\n### 📊 Tables\n```html\n<table>\n  <thead>\n    <tr><th>Name</th><th>Age</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Anu</td><td>25</td></tr>\n  </tbody>\n</table>\n```",
+      "challenge": "Create a student report card using tables and lists with semantic tags.",
+      "quiz": [
+        {
+          "question": "Which tag creates an unordered list?",
+          "options": [
+            "<ul>",
+            "<ol>",
+            "<li>",
+            "<list>"
+          ],
+          "answer": "<ul>"
+        },
+        {
+          "question": "Which tag defines a table row?",
+          "options": [
+            "<tr>",
+            "<td>",
+            "<th>",
+            "<row>"
+          ],
+          "answer": "<tr>"
+        }
       ],
       "interviewQuestions": [
         {
-          "question": "What is the difference between a Core Module and a Shared Module?",
-          "answer": "CoreModule holds singleton services (loaded once in AppModule), while SharedModule contains reusable components, directives, and pipes used across multiple modules.",
-          "showAnswer": false
+          "question": "Difference between <ul> and <ol>?",
+          "answer": "<ul> is unordered, <ol> is ordered."
         },
         {
-          "question": "Why should CoreModule be imported only once?",
-          "answer": "To prevent multiple instances of singleton services and maintain consistent app state.",
-          "showAnswer": false
+          "question": "Why use <caption> in tables?",
+          "answer": "Improves accessibility by describing table purpose."
         },
         {
-          "question": "What is the purpose of a Routing Module?",
-          "answer": "It defines and manages the routes for a specific module, keeping navigation logic separate and maintainable.",
-          "showAnswer": false
+          "question": "Can lists be nested?",
+          "answer": "Yes, lists can be nested inside <li> elements."
         }
-      ],
-      "challenge": "Create a CoreModule that provides a LoggingService, a SharedModule with a reusable ButtonComponent, and a FeatureModule (e.g., ProductModule) that imports SharedModule to use the ButtonComponent.",
+      ]
+    },
+    {
+      "title": "CSS",
+      "topic": "Grid Layout",
+      "summary": "Definition: CSS Grid is a two‑dimensional layout system for rows and columns.\n✔️ Provides precise control over alignment and spacing.\n✔️ Key properties → grid-template-columns, grid-template-rows, gap.\n✔️ Responsive → Use auto-fit/auto-fill with minmax().",
+      "solution": "### 🎯 Basic Grid\n```css\n.container {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 10px;\n}\n.item { background: lightblue; }\n```",
+      "challenge": "Design a 3x3 photo gallery using CSS Grid with responsive behavior.",
       "quiz": [
         {
-          "question": "Which module starts the Angular application?",
+          "question": "Which property defines grid columns?",
           "options": [
-            "Feature Module",
-            "Root Module",
-            "Shared Module",
-            "Core Module"
+            "grid-template-rows",
+            "grid-template-columns",
+            "grid-gap",
+            "grid-area"
           ],
-          "answer": "Root Module"
+          "answer": "grid-template-columns"
         },
         {
-          "question": "Which module contains reusable components, directives, and pipes?",
+          "question": "Which property sets spacing between grid items?",
           "options": [
-            "Feature Module",
-            "Shared Module",
-            "Core Module",
-            "Routing Module"
+            "margin",
+            "gap",
+            "padding",
+            "border"
           ],
-          "answer": "Shared Module"
+          "answer": "gap"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between Flexbox and Grid?",
+          "answer": "Flexbox is one-dimensional, Grid is two-dimensional."
         },
         {
-          "question": "What is the purpose of a Feature Module?",
+          "question": "What does fr unit represent?",
+          "answer": "Fractional unit of available space in grid."
+        },
+        {
+          "question": "How do you create responsive grids?",
+          "answer": "Use auto-fit/auto-fill with minmax()."
+        }
+      ]
+    },
+    {
+      "title": "JavaScript",
+      "topic": "Objects",
+      "summary": "Definition: Objects are collections of key‑value pairs in JavaScript.\n✔️ Store both data and behavior.\n✔️ Access via dot notation or bracket notation.\n✔️ Support inheritance through prototypes.",
+      "solution": "### 🧩 Object Basics\n```js\nconst user = {\n  name: \"Anu\",\n  age: 25,\n  greet() { console.log(`Hello ${this.name}`); }\n};\nuser.greet();\n```",
+      "challenge": "Create a `car` object with properties like brand, model, and year, then log them.",
+      "quiz": [
+        {
+          "question": "Which syntax defines an object?",
           "options": [
-            "To store global services",
-            "To group related functionality",
-            "To manage routes",
-            "To start the application"
+            "{}",
+            "[]",
+            "()",
+            "<>"
           ],
-          "answer": "To group related functionality"
+          "answer": "{}"
+        },
+        {
+          "question": "How do you access object properties?",
+          "options": [
+            "dot notation",
+            "brackets",
+            "both"
+          ],
+          "answer": "both"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between dot and bracket notation?",
+          "answer": "Dot is cleaner; bracket allows dynamic keys."
+        },
+        {
+          "question": "What is Object.create() used for?",
+          "answer": "Creates a new object with specified prototype."
+        },
+        {
+          "question": "Can objects have methods?",
+          "answer": "Yes, functions can be properties of objects."
+        }
+      ]
+    },
+    {
+      "title": "TypeScript",
+      "topic": "Type Narrowing",
+      "summary": "Definition: Type Narrowing refines union types to specific types at runtime.\n✔️ Achieved using typeof, instanceof, or discriminated unions.\n✔️ Ensures safe operations on values.\n✔️ Improves type safety and reduces runtime errors.",
+      "solution": "### 🔐 Type Narrowing Example\n```ts\nfunction printId(id: string | number) {\n  if (typeof id === \"string\") {\n    console.log(id.toUpperCase());\n  } else {\n    console.log(id.toFixed(2));\n  }\n}\n```",
+      "challenge": "Write a function that accepts `string | number` and narrows type using `typeof`.",
+      "quiz": [
+        {
+          "question": "Which operator helps narrow types?",
+          "options": [
+            "typeof",
+            "instanceof",
+            "both"
+          ],
+          "answer": "both"
+        },
+        {
+          "question": "What is type narrowing?",
+          "options": [
+            "Refining union types",
+            "Expanding types",
+            "Ignoring types"
+          ],
+          "answer": "Refining union types"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What are discriminated unions?",
+          "answer": "Union types with a common literal property for narrowing."
+        },
+        {
+          "question": "How does instanceof help narrowing?",
+          "answer": "Checks if object is instance of a class."
+        },
+        {
+          "question": "Why is narrowing important?",
+          "answer": "Ensures safe operations on union types."
+        }
+      ]
+    },
+    {
+      "title": "Angular",
+      "topic": "Lifecycle Hooks",
+      "summary": "Definition: Lifecycle Hooks are special methods that run at specific stages of a component’s life.\n✔️ ngOnInit → Runs after initialization.\n✔️ ngOnChanges → Runs when input properties change.\n✔️ ngOnDestroy → Runs before component removal.\n✔️ ngAfterViewInit → Runs after view initialization.",
+      "solution": "### 🔄 Lifecycle Hooks\n```ts\n@Component({ selector: 'app-demo', template: '<p>Demo</p>' })\nexport class DemoComponent implements OnInit, OnDestroy {\n  ngOnInit() { console.log('Component initialized'); }\n  ngOnDestroy() { console.log('Component destroyed'); }\n}\n```",
+      "challenge": "Implement `ngOnInit` to fetch data and `ngOnDestroy` to clean up subscriptions.",
+      "quiz": [
+        {
+          "question": "Which hook runs after component creation?",
+          "options": [
+            "ngOnInit",
+            "ngOnDestroy",
+            "ngOnChanges"
+          ],
+          "answer": "ngOnInit"
+        },
+        {
+          "question": "Which hook is used for cleanup?",
+          "options": [
+            "ngOnInit",
+            "ngOnDestroy",
+            "ngAfterViewInit"
+          ],
+          "answer": "ngOnDestroy"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "When is ngOnChanges called?",
+          "answer": "When input-bound properties change."
+        },
+        {
+          "question": "Difference between ngOnInit and constructor?",
+          "answer": "Constructor initializes class; ngOnInit runs after Angular sets inputs."
+        },
+        {
+          "question": "What is ngAfterViewInit used for?",
+          "answer": "Runs after component’s view and child views are initialized."
         }
       ]
     }
@@ -1421,65 +1572,457 @@
   "day": 6,
   "sections": [
     {
-      "title": "Angular",
-      "topic": "Components, Directives & Pipes – Relationship and Usage",
-      "summary": "<div style=\"font-family:Segoe UI, sans-serif; line-height:1.6; font-size:16px;\">\n  <h3 style=\"color:#0a6ebd;\">🧩 Angular Components, Directives & Pipes – Relationship and Usage</h3>\n  <p>Angular applications are built using three fundamental building blocks — <strong>Components</strong>, <strong>Directives</strong>, and <strong>Pipes</strong>. Each serves a unique purpose but they work together to create dynamic, interactive, and maintainable applications.</p>\n  <h4 style=\"color:#0a6ebd;\">1️⃣ Components</h4>\n  <p>A <strong>Component</strong> is the basic building block of an Angular app. It defines the structure, style, and behavior of a portion of the UI. Components are essentially special types of directives that have their own template and logic.</p>\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li><strong>Selector:</strong> Defines the custom HTML tag used to render the component.</li>\n    <li><strong>Template / TemplateUrl:</strong> Defines the view structure (HTML).</li>\n    <li><strong>StyleUrls / Styles:</strong> Defines CSS for the component.</li>\n    <li><strong>Class:</strong> Contains business logic and data binding logic.</li>\n  </ul>\n\n  <h4 style=\"color:#0a6ebd;\">2️⃣ Directives</h4>\n  <p><strong>Directives</strong> are classes that add behavior to elements or manipulate the DOM. Components themselves are directives with templates. Directives teach HTML new behaviors.</p>\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li><span style=\"color:#10b981;\">✔️ <strong>Structural Directives</strong></span> – Change DOM structure (e.g., <code>*ngIf</code>, <code>*ngFor</code>).</li>\n    <li><span style=\"color:#f59e0b;\">✔️ <strong>Attribute Directives</strong></span> – Change element appearance or behavior (e.g., <code>[ngClass]</code>, <code>[ngStyle]</code>).</li>\n    <li><span style=\"color:#3b82f6;\">✔️ <strong>Component Directives</strong></span> – Directives with a template (every component is one).</li>\n  </ul>\n\n  <h4 style=\"color:#0a6ebd;\">3️⃣ Pipes</h4>\n  <p><strong>Pipes</strong> transform data before it’s displayed in the template. They make data presentation clean and reusable.</p>\n  <ul style=\"list-style:none; padding-left:0;\">\n    <li><strong>Built-in Pipes:</strong> <code>date</code>, <code>uppercase</code>, <code>currency</code>, <code>percent</code>, <code>json</code></li>\n    <li><strong>Custom Pipes:</strong> Can be created using <code>@Pipe</code> decorator to handle specific formatting needs.</li>\n  </ul>\n\n  <h4 style=\"color:#0a6ebd;\">🔗 Relationship</h4>\n  <p><strong>Components</strong> define UI structure, <strong>Directives</strong> modify DOM behavior or styling, and <strong>Pipes</strong> format data. Together, they enable a powerful and flexible UI architecture.</p>\n</div>",
-      "solution": "### ✨ Angular Components\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-user',\n  templateUrl: './user.component.html',\n  styleUrls: ['./user.component.css']\n})\nexport class UserComponent {\n  name = 'Rajesh Roy';\n  greet() {\n    return `Hello, ${this.name}!`;\n  }\n}\n```\n\n### ✨ Angular Directives\n**Structural Directive Example:**\n```html\n<div *ngIf=\"isLoggedIn\">Welcome back!</div>\n<li *ngFor=\"let user of users\">{{ user.name }}</li>\n```\n\n**Attribute Directive Example:**\n```typescript\n@Directive({ selector: '[appHighlight]' })\nexport class HighlightDirective {\n  constructor(private el: ElementRef) {\n    el.nativeElement.style.backgroundColor = 'yellow';\n  }\n}\n```\n\n### ✨ Angular Pipes\n**Custom Pipe Example:**\n```typescript\nimport { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({ name: 'titlecase' })\nexport class TitleCasePipe implements PipeTransform {\n  transform(value: string): string {\n    return value.split(' ')\n      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n      .join(' ');\n  }\n}\n```\n\n**Usage:**\n```html\n<p>{{ 'angular components and directives' | titlecase }}</p>\n```\n\n### 💡 Using All Together\n```html\n<div *ngIf=\"users.length > 0\">\n  <p [appHighlight]>User List:</p>\n  <ul>\n    <li *ngFor=\"let user of users\">\n      {{ user.name | titlecase }} — Joined on {{ user.joinDate | date:'longDate' }}\n    </li>\n  </ul>\n</div>\n```\n\n### 🧠 Relationship Table\n| Element | Role | Interaction |\n|----------|------|-------------|\n| **Component** | Defines view and logic | Uses directives and pipes in its template |\n| **Directive** | Modifies DOM or behavior | Used inside component templates |\n| **Pipe** | Transforms data for display | Used inside component bindings or interpolation |",
-      "images": [
-        "assets/images/day4/ng-components-directives-pipes.png"
+      "title": "HTML",
+      "topic": "Media Tags",
+      "summary": "Definition: Media tags embed multimedia content like images, audio, and video.\n✔️ &lt;img&gt; → Displays images.\n✔️ &lt;audio&gt; → Embeds audio files with controls.\n✔️ &lt;video&gt; → Embeds video content with playback options.\n✔️ &lt;source&gt; → Defines multiple media sources for compatibility.",
+      "solution": "### 🎥 Media Tags\n```html\n<img src=\"photo.jpg\" alt=\"Sample\" />\n<audio controls>\n  <source src=\"song.mp3\" type=\"audio/mpeg\">\n</audio>\n<video controls width=\"300\">\n  <source src=\"movie.mp4\" type=\"video/mp4\">\n</video>\n```",
+      "challenge": "Create a webpage that displays an image, plays background music, and shows a sample video.",
+      "quiz": [
+        {
+          "question": "Which tag is used to embed audio?",
+          "options": [
+            "<sound>",
+            "<audio>",
+            "<music>",
+            "<media>"
+          ],
+          "answer": "<audio>"
+        },
+        {
+          "question": "Which attribute provides alternative text for images?",
+          "options": [
+            "alt",
+            "title",
+            "src",
+            "desc"
+          ],
+          "answer": "alt"
+        }
       ],
       "interviewQuestions": [
         {
-          "question": "What is a component in Angular?",
-          "answer": "A component controls a portion of the UI (view) and consists of an HTML template, CSS styles, and TypeScript logic.",
-          "showAnswer": false
+          "question": "Why is the alt attribute important in <img>?",
+          "answer": "It improves accessibility and SEO."
         },
         {
-          "question": "What are the types of directives in Angular?",
-          "answer": "There are three types — Component Directives, Structural Directives (e.g. *ngIf, *ngFor), and Attribute Directives (e.g. [ngStyle], [ngClass]).",
-          "showAnswer": false
+          "question": "Can <video> have multiple sources?",
+          "answer": "Yes, using <source> tags for different formats."
         },
         {
-          "question": "What is the purpose of pipes in Angular?",
-          "answer": "Pipes transform or format data in templates, e.g., converting text to uppercase or formatting dates and currency.",
-          "showAnswer": false
+          "question": "Difference between <embed> and <video>?",
+          "answer": "<embed> is generic, <video> is semantic with controls."
         }
-      ],
-      "challenge": "Create a custom directive that highlights text on hover, and a custom pipe that converts a sentence to title case. Use both inside a component template.",
+      ]
+    },
+    {
+      "title": "CSS",
+      "topic": "Positioning",
+      "summary": "Definition: CSS positioning controls how elements are placed in the document.\n✔️ static → Default flow positioning.\n✔️ relative → Positioned relative to itself.\n✔️ absolute → Positioned relative to nearest positioned ancestor.\n✔️ fixed → Stays fixed relative to viewport.\n✔️ sticky → Switches between relative and fixed based on scroll.",
+      "solution": "### 📐 Positioning Example\n```css\n.box1 { position: static; }\n.box2 { position: relative; top: 10px; left: 20px; }\n.box3 { position: absolute; top: 50px; left: 50px; }\n.box4 { position: fixed; bottom: 0; right: 0; }\n.box5 { position: sticky; top: 0; }\n```",
+      "challenge": "Create a navigation bar that stays fixed at the top while scrolling.",
       "quiz": [
         {
-          "question": "Which decorator is used to define a component?",
+          "question": "Which positioning keeps element relative to viewport?",
           "options": [
-            "@Directive",
-            "@Pipe",
-            "@Component",
-            "@NgModule"
+            "absolute",
+            "fixed",
+            "relative",
+            "sticky"
           ],
-          "answer": "@Component"
+          "answer": "fixed"
         },
         {
-          "question": "Which directive type changes the DOM structure?",
+          "question": "Which positioning depends on scroll?",
           "options": [
-            "Attribute",
-            "Structural",
-            "Component",
-            "Template"
+            "sticky",
+            "absolute",
+            "relative",
+            "static"
           ],
-          "answer": "Structural"
+          "answer": "sticky"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between absolute and fixed?",
+          "answer": "Absolute is relative to ancestor, fixed is relative to viewport."
         },
         {
-          "question": "What does a pipe do in Angular?",
+          "question": "When to use sticky positioning?",
+          "answer": "For headers or elements that should stick during scroll."
+        },
+        {
+          "question": "What is the default positioning?",
+          "answer": "Static."
+        }
+      ]
+    },
+    {
+      "title": "JavaScript",
+      "topic": "Higher-order Functions",
+      "summary": "Definition: Higher‑order functions are functions that take other functions as arguments or return them.\n✔️ Examples → map, filter, reduce.\n✔️ Enable functional programming style.\n✔️ Improve code reusability and abstraction.",
+      "solution": "### 🔁 Higher-order Functions\n```js\nconst numbers = [1,2,3,4];\nconst doubled = numbers.map(n => n*2);\nconst evens = numbers.filter(n => n%2===0);\nconst sum = numbers.reduce((acc,n) => acc+n,0);\n```",
+      "challenge": "Write a higher‑order function that takes a function and applies it to each element of an array.",
+      "quiz": [
+        {
+          "question": "Which is NOT a higher-order function?",
           "options": [
-            "Handles events",
-            "Transforms data",
-            "Fetches API",
-            "Binds components"
+            "map",
+            "filter",
+            "reduce",
+            "parseInt"
           ],
-          "answer": "Transforms data"
+          "answer": "parseInt"
+        },
+        {
+          "question": "What does reduce return?",
+          "options": [
+            "Array",
+            "Single value",
+            "Boolean",
+            "Object"
+          ],
+          "answer": "Single value"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "What makes a function higher-order?",
+          "answer": "It accepts or returns another function."
+        },
+        {
+          "question": "Why are higher-order functions useful?",
+          "answer": "They enable abstraction and cleaner code."
+        },
+        {
+          "question": "Give an example of a custom higher-order function.",
+          "answer": "A function that takes a callback and applies it to each array element."
+        }
+      ]
+    },
+    {
+      "title": "TypeScript",
+      "topic": "Enums",
+      "summary": "Definition: Enums are special TypeScript constructs for defining named constants.\n✔️ Numeric enums → Default starting at 0.\n✔️ String enums → Assign string values.\n✔️ Provide readability and maintainability.\n✔️ Useful for representing fixed sets of values.",
+      "solution": "### 🔢 Enum Example\n```ts\nenum Direction { Up, Down, Left, Right }\nlet move: Direction = Direction.Up;\n\nenum Status { Pending = \"PENDING\", Approved = \"APPROVED\" }\n```",
+      "challenge": "Create an enum for user roles (Admin, Editor, Viewer) and use it in a function.",
+      "quiz": [
+        {
+          "question": "What is the default starting value of numeric enums?",
+          "options": [
+            "0",
+            "1",
+            "undefined",
+            "null"
+          ],
+          "answer": "0"
+        },
+        {
+          "question": "Which enum type allows custom strings?",
+          "options": [
+            "Numeric",
+            "String",
+            "Hybrid",
+            "None"
+          ],
+          "answer": "String"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between numeric and string enums?",
+          "answer": "Numeric auto-increments, string requires explicit values."
+        },
+        {
+          "question": "Can enums be heterogeneous?",
+          "answer": "Yes, mixing numeric and string values."
+        },
+        {
+          "question": "Why use enums?",
+          "answer": "For readability and representing fixed sets of values."
+        }
+      ]
+    },
+    {
+      "title": "Angular",
+      "topic": "Directives & Pipes",
+      "summary": "Definition: Directives are instructions to manipulate DOM behavior, while Pipes transform displayed data.\n✔️ Directives → Structural (*ngIf, *ngFor) and Attribute (ngClass, ngStyle).\n✔️ Pipes → Built‑in (date, currency, uppercase) and custom pipes.\n✔️ Enhance reusability and readability in templates.",
+      "solution": "### 🛠 Directives Example\n```html\n<div *ngIf=\"isVisible\">Visible Content</div>\n<ul>\n  <li *ngFor=\"let item of items\">{{item}}</li>\n</ul>\n```\n\n### 🔄 Pipes Example\n```html\n<p>{{ today | date:'shortDate' }}</p>\n<p>{{ price | currency:'USD' }}</p>\n```",
+      "challenge": "Create a custom pipe that capitalizes the first letter of each word in a string.",
+      "quiz": [
+        {
+          "question": "Which directive repeats elements?",
+          "options": [
+            "*ngIf",
+            "*ngFor",
+            "ngClass",
+            "ngStyle"
+          ],
+          "answer": "*ngFor"
+        },
+        {
+          "question": "Which pipe formats numbers as currency?",
+          "options": [
+            "currency",
+            "number",
+            "decimal",
+            "money"
+          ],
+          "answer": "currency"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between structural and attribute directives?",
+          "answer": "Structural changes DOM layout, attribute changes element behavior/style."
+        },
+        {
+          "question": "How do you create a custom pipe?",
+          "answer": "Use @Pipe decorator and implement transform()."
+        },
+        {
+          "question": "Why are pipes useful?",
+          "answer": "They simplify data transformation in templates."
+        }
+      ]
+    }
+  ]
+},
+{
+  "day": 7,
+  "sections": [
+    {
+      "title": "HTML",
+      "topic": "Meta Tags & SEO",
+      "summary": "Definition: Meta tags provide metadata about a webpage, crucial for SEO and browser behavior.\n✔️ &lt;meta charset&gt; → Defines character encoding.\n✔️ &lt;meta name=\"viewport\"&gt; → Controls responsive scaling.\n✔️ &lt;meta name=\"description\"&gt; → Improves search engine ranking.\n✔️ SEO → Proper meta usage enhances visibility and accessibility.",
+      "solution": "### 🌐 Meta Tags Example\n```html\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Learn HTML Meta Tags & SEO\">\n  <title>Day 7 Learning</title>\n</head>\n```",
+      "challenge": "Add meta tags for description, keywords, and viewport to optimize a sample webpage for SEO.",
+      "images": [
+        "assets/images/day7/html.png"
+      ],
+      "quiz": [
+        {
+          "question": "Which meta tag defines page description?",
+          "options": [
+            "charset",
+            "viewport",
+            "description",
+            "keywords"
+          ],
+          "answer": "description"
+        },
+        {
+          "question": "Which meta tag helps with responsive design?",
+          "options": [
+            "viewport",
+            "charset",
+            "keywords",
+            "title"
+          ],
+          "answer": "viewport"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Why are meta tags important for SEO?",
+          "answer": "They provide metadata that search engines use for ranking and indexing."
+        },
+        {
+          "question": "Difference between keywords and description meta tags?",
+          "answer": "Keywords suggest search terms; description summarizes page content."
+        },
+        {
+          "question": "Can meta tags affect accessibility?",
+          "answer": "Yes, viewport and charset improve usability across devices and languages."
+        }
+      ]
+    },
+    {
+      "title": "CSS",
+      "topic": "Typography",
+      "summary": "Definition: Typography in CSS controls text appearance and readability.\n✔️ font-family → Defines typeface.\n✔️ font-size → Sets text size.\n✔️ font-weight → Controls thickness.\n✔️ line-height → Adjusts spacing between lines.\n✔️ text-align → Aligns text horizontally.",
+      "solution": "### ✍️ Typography Example\n```css\nbody {\n  font-family: 'Roboto', sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  font-weight: 400;\n  text-align: left;\n}\n```",
+      "challenge": "Style a blog post with custom font, line spacing, and headings hierarchy.",
+        "images": [
+          "assets/images/day7/css.png"
+        ],
+      "quiz": [
+        {
+          "question": "Which property sets spacing between lines?",
+          "options": [
+            "letter-spacing",
+            "line-height",
+            "word-spacing",
+            "margin"
+          ],
+          "answer": "line-height"
+        },
+        {
+          "question": "Which property changes font style?",
+          "options": [
+            "font-family",
+            "font-weight",
+            "font-size",
+            "text-align"
+          ],
+          "answer": "font-family"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Why is line-height important?",
+          "answer": "It improves readability and prevents text crowding."
+        },
+        {
+          "question": "Difference between serif and sans-serif fonts?",
+          "answer": "Serif has decorative strokes; sans-serif is clean and modern."
+        },
+        {
+          "question": "How can typography affect UX?",
+          "answer": "Good typography enhances readability, accessibility, and user engagement."
+        }
+      ]
+    },
+    {
+      "title": "JavaScript",
+      "topic": "Closures",
+      "summary": "Definition: A closure is a function that retains access to variables from its lexical scope even after the outer function has executed.\n✔️ Enables data privacy.\n✔️ Useful for callbacks and functional programming.\n✔️ Common in event handlers and async code.",
+      "solution": "### 🔒 Closure Example\n```js\nfunction outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    return count;\n  };\n}\nconst counter = outer();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2\n```",
+      "challenge": "Create a closure that maintains a private counter and exposes increment/decrement functions.",
+      "images": [
+          "assets/images/day7/js.png"
+        ],
+      "quiz": [
+        {
+          "question": "What does a closure retain?",
+          "options": [
+            "Global variables",
+            "Lexical scope",
+            "DOM elements",
+            "Functions only"
+          ],
+          "answer": "Lexical scope"
+        },
+        {
+          "question": "Which use case benefits from closures?",
+          "options": [
+            "Data privacy",
+            "Global state",
+            "CSS styling",
+            "HTML rendering"
+          ],
+          "answer": "Data privacy"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Why are closures important in JS?",
+          "answer": "They allow functions to access outer scope variables after execution."
+        },
+        {
+          "question": "Give a real-world example of closures.",
+          "answer": "Event listeners that access variables defined outside their function."
+        },
+        {
+          "question": "Can closures lead to memory leaks?",
+          "answer": "Yes, if references are not properly released."
+        }
+      ]
+    },
+    {
+      "title": "TypeScript",
+      "topic": "Generics",
+      "summary": "Definition: Generics allow creating reusable components that work with multiple types.\n✔️ Provide type safety with flexibility.\n✔️ Common in functions, classes, and interfaces.\n✔️ Enable code reusability and abstraction.",
+      "solution": "### 🔧 Generics Example\n```ts\nfunction identity<T>(arg: T): T {\n  return arg;\n}\n\nlet output1 = identity<string>(\"Hello\");\nlet output2 = identity<number>(42);\n```",
+      "challenge": "Write a generic function that accepts an array of any type and returns its first element.",
+       "images": [
+          "assets/images/day7/ts.png"
+        ],
+      "quiz": [
+        {
+          "question": "Which syntax defines a generic?",
+          "options": [
+            "<>",
+            "{}",
+            "[]",
+            "()"
+          ],
+          "answer": "<>"
+        },
+        {
+          "question": "Why use generics?",
+          "options": [
+            "Flexibility with type safety",
+            "Faster execution",
+            "Avoid functions",
+            "Replace enums"
+          ],
+          "answer": "Flexibility with type safety"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between generics and any?",
+          "answer": "Generics preserve type information; any removes type safety."
+        },
+        {
+          "question": "Can generics be used in classes?",
+          "answer": "Yes, to create reusable data structures."
+        },
+        {
+          "question": "What is a generic constraint?",
+          "answer": "Restricts generic types to specific shapes or interfaces."
+        }
+      ]
+    },
+    {
+      "title": "Angular",
+      "topic": "Structural Directives",
+      "summary": "Definition: Structural directives change the DOM layout by adding or removing elements.\n✔️ *ngIf → Conditionally renders elements.\n✔️ *ngFor → Iterates over collections.\n✔️ *ngSwitch → Switches between views.\n✔️ Custom directives → Extend DOM manipulation.",
+      "solution": "### 🏗 Structural Directives Example\n```html\n<div *ngIf=\"isVisible\">Visible Content</div>\n<ul>\n  <li *ngFor=\"let item of items\">{{item}}</li>\n</ul>\n<div [ngSwitch]=\"status\">\n  <p *ngSwitchCase=\"'active'\">Active</p>\n  <p *ngSwitchDefault>Unknown</p>\n</div>\n```",
+      "challenge": "Create a custom structural directive that conditionally renders content based on user role.",
+        "images": [
+          "assets/images/day7/ng.png"
+        ],
+      "quiz": [
+        {
+          "question": "Which directive repeats elements?",
+          "options": [
+            "*ngIf",
+            "*ngFor",
+            "ngClass",
+            "ngStyle"
+          ],
+          "answer": "*ngFor"
+        },
+        {
+          "question": "Which directive conditionally renders elements?",
+          "options": [
+            "*ngIf",
+            "*ngFor",
+            "*ngSwitch",
+            "ngModel"
+          ],
+          "answer": "*ngIf"
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "question": "Difference between structural and attribute directives?",
+          "answer": "Structural changes DOM layout; attribute modifies element behavior/style."
+        },
+        {
+          "question": "How do you create a custom structural directive?",
+          "answer": "Use @Directive with TemplateRef and ViewContainerRef."
+        },
+        {
+          "question": "Why are structural directives powerful?",
+          "answer": "They allow dynamic DOM manipulation directly in templates."
         }
       ]
     }
   ]
 }
+
 
 ]

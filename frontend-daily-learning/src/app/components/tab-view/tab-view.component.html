@@ -22,7 +22,16 @@
                     <!-- Content Section -->
                     <div class="lg:col-span-2 space-y-6">
                         <h4 class="text-xl sm:text-2xl font-semibold text-gray-800">{{ tab.topic }}</h4>
-                        <p *ngIf="tab.summary" class="text-black-600 font-medium" [innerHTML]="tab.summary" ></p>
+                        <!-- <p *ngIf="tab.summary" class="text-gray-800 font-sans  font-semibold leading-relaxed whitespace-pre-line"  [innerHTML]="tab.summary" ></p> -->
+                        <!-- HTML Section -->
+                        <p *ngIf="tab.summary" [ngClass]="{
+                             'text-blue-700': tab.title === 'HTML',
+                             'text-green-700': tab.title === 'CSS',
+                             'text-yellow-700': tab.title === 'JavaScript',
+                             'text-purple-700': tab.title === 'TypeScript',
+                             'text-red-700': tab.title === 'Angular'
+                           }" class="font-sans text-lg font-semibold leading-relaxed whitespace-pre-line" [innerHTML]="tab.summary">
+                        </p>
 
                         <!-- Markdown -->
                         <div class="bg-gray-50 p-4 rounded border">
