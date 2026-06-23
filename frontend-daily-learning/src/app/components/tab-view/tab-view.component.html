@@ -22,16 +22,31 @@
                     <!-- Content Section -->
                     <div class="lg:col-span-2 space-y-6">
                         <h4 class="text-xl sm:text-2xl font-semibold text-gray-800">{{ tab.topic }}</h4>
-                        <!-- <p *ngIf="tab.summary" class="text-gray-800 font-sans  font-semibold leading-relaxed whitespace-pre-line"  [innerHTML]="tab.summary" ></p> -->
-                        <!-- HTML Section -->
-                        <p *ngIf="tab.summary" [ngClass]="{
-                             'text-blue-700': tab.title === 'HTML',
-                             'text-green-700': tab.title === 'CSS',
-                             'text-yellow-700': tab.title === 'JavaScript',
-                             'text-purple-700': tab.title === 'TypeScript',
-                             'text-red-700': tab.title === 'Angular'
-                           }" class="font-sans text-lg font-semibold leading-relaxed whitespace-pre-line" [innerHTML]="tab.summary">
-                        </p>
+                        <section *ngIf="tab.summary" class="rounded-lg border-l-4 p-4 shadow-sm" [ngClass]="{
+                             'border-blue-500 bg-blue-50': tab.title === 'HTML',
+                             'border-green-500 bg-green-50': tab.title === 'CSS',
+                             'border-yellow-500 bg-yellow-50': tab.title === 'JavaScript',
+                             'border-purple-500 bg-purple-50': tab.title === 'TypeScript',
+                             'border-red-500 bg-red-50': tab.title === 'Angular'
+                           }">
+                            <div class="mb-2 flex items-center justify-between gap-3">
+                                <h5 class="m-0 text-sm font-semibold uppercase tracking-wide" [ngClass]="{
+                                     'text-blue-700': tab.title === 'HTML',
+                                     'text-green-700': tab.title === 'CSS',
+                                     'text-yellow-700': tab.title === 'JavaScript',
+                                     'text-purple-700': tab.title === 'TypeScript',
+                                     'text-red-700': tab.title === 'Angular'
+                                   }">
+                                    Interview Summary
+                                </h5>
+                                <span class="rounded-full bg-white/80 px-2.5 py-1 text-xs font-medium text-gray-600">
+                                    {{ tab.title }}
+                                </span>
+                            </div>
+                            <div class="summary-content text-sm leading-7 text-gray-800 sm:text-base"
+                                [innerHTML]="tab.summary">
+                            </div>
+                        </section>
 
                         <!-- Markdown -->
                         <div class="bg-gray-50 p-4 rounded border">

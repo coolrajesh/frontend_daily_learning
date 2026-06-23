@@ -1,0 +1,8 @@
+::ng-deep .summary-content {
+  white-space: pre-line;
+}
+
+::ng-deep .summary-content strong {
+  font-weight: 700;
+  color: #111827;
+}
